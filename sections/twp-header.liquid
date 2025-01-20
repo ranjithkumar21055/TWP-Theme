@@ -1,20 +1,22 @@
 {% style %}
+.twp-announcement_bar {
+  background-color: {{ section.settings.announcement_background }};
+  color: {{ section.settings.announcement_text_color }};
+}
 .twp-header_wrapper {
   background-color: {{ section.settings.background }};
-  padding: 10px 0;
 }
 .header__icons svg path {
   fill: {{ section.settings.svg-fill }};
 }
 .twp-nav_item a {
   color: {{ section.settings.svg-fill }}; 
-  text-decoration: none;
 }
 {% endstyle %}
 <div class="twp-header">
-  <div class="twp-announcement">
+  <div class="twp-announcement_bar">
     <div class="page-width">
-      <p>Free shipping on all orders over $50</p>
+      <p>{{section.settings.announcement_text}}</p>
     </div>
   </div>
   <div class="twp-header_wrapper">
@@ -170,6 +172,33 @@
       "id": "menu",
       "label": "Menu"
     }
+  ],
+  "blocks": [
+    {
+      "type": "announcement_bar",
+      "name": "Announcement Bar",
+      "settings": [
+        {
+          "type": "text",
+          "id": "announcement_text",
+          "label": "Announcement Text",
+          "default": "Free shipping on all orders over $50"
+        },
+        {
+          "type": "color",
+          "id": "announcement_background",
+          "label": "Background Color",
+          "default": "#ffffff"
+        },
+        {
+          "type": "color",
+          "id": "announcement_text_color",
+          "label": "Text Color",
+          "default": "#000000"
+        }
+      ]
+    }
   ]
 }
 {% endschema %}
+
