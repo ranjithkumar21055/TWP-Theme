@@ -18,6 +18,13 @@
   {% endif %}
 </div>
 
+<style>
+  :root {
+    --twp-logo-width: {{ section.settings.twp_logo_width }}px;
+    --twp-header-text-color: {{ section.settings.twp_header_text_color }};
+  }
+</style>
+
 {% schema %}
 {
   "name": "TWP header",
@@ -42,6 +49,12 @@
       "type": "text",
       "id": "twp-header_text",  
       "label": "Header text",
+    },
+    {
+      "type": "color_background",
+      "id": "background",
+      "label": "Background",
+      "default": "#ffffff"
     }
   ]
 }
