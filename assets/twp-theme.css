@@ -5,11 +5,18 @@
 }
 
 /* Header Wrapper */
-.twp-header_wrapper{
+.twp-header {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.twp-header-menu_wrapper{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
 }
 
 /* Logo */
@@ -27,5 +34,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    gap: 30px;
 }
+
 
