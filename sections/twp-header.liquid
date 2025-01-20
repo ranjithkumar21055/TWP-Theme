@@ -10,7 +10,11 @@
       >
     </a>
   {% else %}
-    <h1 class="twp-shop_name">{{ section.settings.twp-twp-header_text }}</h1>
+    {% if section.settings.twp-header_text != blank %}
+      <h1 class="twp-shop_name">{{ section.settings.twp-header_text }}</h1>
+    {% else %}
+      <h1 class="twp-shop_name">{{ shop.name }}</h1>
+    {% endif %}
   {% endif %}
 </div>
 
@@ -38,7 +42,6 @@
       "type": "text",
       "id": "twp-header_text",  
       "label": "Header text",
-      "default": "{{ shop.name }}",
     }
   ]
 }
