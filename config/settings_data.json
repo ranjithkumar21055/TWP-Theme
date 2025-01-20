@@ -140,8 +140,8 @@
             "type": "announcement_bar",
             "settings": {
               "announcement_text": "Free Delivery for orders above $50",
-              "announcement_background": "#000000",
-              "announcement_text_color": "#ffffff"
+              "announcement_background": "#ffffff",
+              "announcement_text_color": "#000000"
             }
           }
         },
