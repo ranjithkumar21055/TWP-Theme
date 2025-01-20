@@ -136,8 +136,8 @@
       "twp-header": {
         "type": "twp-header",
         "settings": {
-          "twp_logo": "shopify://shop_images/gift_card.png",
-          "twp_logo_width": 105
+          "twp-logo_width": 100,
+          "twp-header_text": "twp"
         }
       }
     },
