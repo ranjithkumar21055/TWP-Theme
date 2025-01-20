@@ -4,7 +4,6 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    color: var(--twp-header-text-color);
 }
 
 /* Logo */
@@ -12,6 +11,3 @@
     font-size: clamp(18px, 5vw, 32px);
 }
 
-.header__logo-link img {
-    width: var(--twp-logo-width);
-}
