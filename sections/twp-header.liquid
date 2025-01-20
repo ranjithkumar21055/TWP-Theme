@@ -1,5 +1,8 @@
-
-
+<div class="page-width">
+      <a href="{{ shop.url }}" class="header__logo-link">
+        <img src="{{ section.settings.twp_logo | img_url: 'master' }}" alt="{{ shop.name }}" width="{{ section.settings.twp_logo_width }}" height="auto" style="width:{{ section.settings.twp_logo_width }}px;">
+      </a>
+</div>
 
 {% schema %}
 {
@@ -13,13 +16,13 @@
      "label": "Logo",
     },
     {
-      "type": "style.spacing_panel",
-      "id": "spacing",
-      "label": "Spacing",
-      "default": {
-        "padding": "16px 2px",
-        "margin": "0px"
-      }
+    "type": "range",
+    "id": "twp_logo_width",
+    "label": "Logo width",
+    "default": 100,
+    "min": 80,
+    "max": 130,
+    "step": 5,
     }
   ]
 }
