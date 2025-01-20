@@ -14,11 +14,15 @@
 }
 {% endstyle %}
 <div class="twp-header">
-  <div class="twp-announcement_bar">
-    <div class="page-width">
-      <p>{{section.settings.announcement_text}}</p>
-    </div>
-  </div>
+  {% for block in section.blocks %}
+    {% if block.type == 'announcement_bar' %}
+      <div class="twp-announcement_bar">
+        <div class="page-width">
+          <p>{{ block.settings.announcement_text }}</p>
+        </div>
+      </div>
+    {% endif %}
+  {% endfor %}
   <div class="twp-header_wrapper">
     <div class="page-width twp-header-menu_wrapper">
       {% if section.settings.twp-logo %}
