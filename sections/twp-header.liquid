@@ -27,6 +27,12 @@
     {% endif %}
   {% endif %}
 
+  <ul class="main-menu">
+    {% for link in section.settings.menu.links %}
+      <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+    {% endfor %}
+  </ul>
+
   <div class="header__icons{% if section.settings.enable_country_selector or section.settings.enable_language_selector %} header__icons--localization header-localization{% endif %}">
     <div class="desktop-localization-wrapper">
       {%- if section.settings.enable_country_selector and localization.available_countries.size > 1 -%}
@@ -106,6 +112,7 @@
       {%- endif -%}
     </a>
   </div>
+
 </div>
 
 
@@ -143,8 +150,13 @@
     {
       "type": "color",
       "id": "svg-fill",
-      "label": "Icon Color",
+      "label": "Text Color",
       "default": "#ffffff"
+    },
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Menu"
     }
   ]
 }
