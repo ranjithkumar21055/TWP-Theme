@@ -1,8 +1,12 @@
 {% style %}
-.twp-announcement_bar {
-  background-color: {{ section.settings.announcement_background }};
-  color: {{ section.settings.announcement_text_color }};
-}
+{% for block in section.blocks %}
+  {% if block.type == 'announcement_bar' %}
+    .twp-announcement_bar {
+      background-color: {{ block.settings.announcement_background }};
+      color: {{ block.settings.announcement_text_color }};
+    }
+  {% endif %}
+{% endfor %}
 .twp-header_wrapper {
   background-color: {{ section.settings.background }};
 }
