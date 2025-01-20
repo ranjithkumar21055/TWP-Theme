@@ -137,7 +137,7 @@
         "type": "twp-header",
         "settings": {
           "twp-logo": "shopify://shop_images/Vivekananda_Vidhyavardhaka_Sangha_-_Logo.svg",
-          "twp-logo_width": 105,
+          "twp-logo_width": 130,
           "twp-header_text": "",
           "background": "#000000"
         }

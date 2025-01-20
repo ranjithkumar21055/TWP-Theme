@@ -1,3 +1,10 @@
+{% style %}
+twp-header_wrapper {
+  background-color: {{ section.settings.background }};
+  padding: 10px 0;
+}
+{% endstyle %}
+
 <div class="page-width twp-header_wrapper">
   {% if section.settings.twp-logo %}
     <a href="{{ shop.url }}" class="twp-header_logo-link">
