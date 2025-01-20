@@ -136,26 +136,17 @@
       "twp-header": {
         "type": "twp-header",
         "blocks": {
-          "announcement_bar_q33Tqh": {
+          "announcement_bar_BHaxgX": {
             "type": "announcement_bar",
             "settings": {
-              "announcement_text": "Free shipping on all orders over $50",
-              "announcement_background": "#ffffff",
-              "announcement_text_color": "#000000"
-            }
-          },
-          "announcement_bar_G7ihf3": {
-            "type": "announcement_bar",
-            "settings": {
-              "announcement_text": "Free shipping on all orders over $50",
-              "announcement_background": "#ffffff",
-              "announcement_text_color": "#000000"
+              "announcement_text": "Free Delivery for orders above $50",
+              "announcement_background": "#000000",
+              "announcement_text_color": "#ffffff"
             }
           }
         },
         "block_order": [
-          "announcement_bar_q33Tqh",
-          "announcement_bar_G7ihf3"
+          "announcement_bar_BHaxgX"
         ],
         "settings": {
           "twp-logo": "shopify://shop_images/Group.svg",
