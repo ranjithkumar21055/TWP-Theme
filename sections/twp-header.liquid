@@ -6,6 +6,9 @@
 .header__icons svg path {
   fill: {{ section.settings.svg-fill }};
 }
+.twp-nav_item a {
+  color: {{ section.settings.svg-fill }}; 
+}
 {% endstyle %}
 
 <div class="page-width twp-header_wrapper">
@@ -27,9 +30,9 @@
     {% endif %}
   {% endif %}
 
-  <ul class="main-menu">
+  <ul class="twp-main_menu">
     {% for link in section.settings.menu.links %}
-      <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+      <li class="twp-nav_item"><a href="{{ link.url }}">{{ link.title }}</a></li>
     {% endfor %}
   </ul>
 
