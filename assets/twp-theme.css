@@ -17,3 +17,7 @@
     font-size: clamp(18px, 5vw, 32px);
 }
 
+.twp-header_logo-link{
+    display: flex;
+}
+

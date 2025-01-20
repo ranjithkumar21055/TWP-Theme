@@ -12,7 +12,7 @@
         src="{{ section.settings.twp-logo | img_url: 'master' }}"
         alt="{{ shop.name }}"
         width="{{ section.settings.twp-logo_width }}"
-        height="auto"
+        height="fit-content"
         style="width:{{ section.settings.twp-logo_width }}px;"
       >
     </a>
@@ -41,9 +41,9 @@
       "type": "range",
       "id": "twp-logo_width",
       "label": "Logo width",
-      "default": 100,
+      "default": 125,
       "min": 80,
-      "max": 130,
+      "max": 200,
       "step": 5
     },
     {
