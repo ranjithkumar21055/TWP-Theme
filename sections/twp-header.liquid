@@ -1,10 +1,26 @@
 
-<p style="height: 20px; color: black; background-color:white;"> Hello World</p>
 
 
 {% schema %}
 {
   "name": "TWP header",
-  "settings": []
+  "tag": "header",
+  "class": "header",
+  "settings": [
+    {
+     "type": "image_picker",
+     "id": "twp_logo",
+     "label": "Logo",
+    },
+    {
+      "type": "style.spacing_panel",
+      "id": "spacing",
+      "label": "Spacing",
+      "default": {
+        "padding": "16px 2px",
+        "margin": "0px"
+      }
+    }
+  ]
 }
 {% endschema %}
