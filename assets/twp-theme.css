@@ -1,0 +1,12 @@
+/* Header Wrapper */
+.twp-header_wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo */
+.twp-shop_name{
+    font-size: clamp(18px, 5vw, 32px);
+}

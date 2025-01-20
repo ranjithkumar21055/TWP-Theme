@@ -1,28 +1,44 @@
-<div class="page-width">
-      <a href="{{ shop.url }}" class="header__logo-link">
-        <img src="{{ section.settings.twp_logo | img_url: 'master' }}" alt="{{ shop.name }}" width="{{ section.settings.twp_logo_width }}" height="auto" style="width:{{ section.settings.twp_logo_width }}px;">
-      </a>
+<div class="page-width twp-header__wrapper">
+  {% if section.settings.twp_logo %}
+    <a href="{{ shop.url }}" class="header__logo-link">
+      <img
+        src="{{ section.settings.twp-logo | img_url: 'master' }}"
+        alt="{{ shop.name }}"
+        width="{{ section.settings.twp-logo_width }}"
+        height="auto"
+        style="width:{{ section.settings.twp-logo_width }}px;"
+      >
+    </a>
+  {% else %}
+    <h1 class="twp-shop_name">{{ section.settings.twp-twp-header_text }}</h1>
+  {% endif %}
 </div>
 
 {% schema %}
 {
   "name": "TWP header",
   "tag": "header",
-  "class": "header",
+  "class": "twp-header",
   "settings": [
     {
-     "type": "image_picker",
-     "id": "twp_logo",
-     "label": "Logo",
+      "type": "image_picker",
+      "id": "twp-logo",
+      "label": "Logo"
     },
     {
-    "type": "range",
-    "id": "twp_logo_width",
-    "label": "Logo width",
-    "default": 100,
-    "min": 80,
-    "max": 130,
-    "step": 5,
+      "type": "range",
+      "id": "twp-logo_width",
+      "label": "Logo width",
+      "default": 100,
+      "min": 80,
+      "max": 130,
+      "step": 5
+    },
+    {
+      "type": "text",
+      "id": "twp-header_text",  
+      "label": "Header text",
+      "default": "{{ shop.name }}",
     }
   ]
 }
