@@ -157,6 +157,7 @@
         ],
         "settings": {
           "twp-logo": "shopify://shop_images/Group.svg",
+          "twp-logo_position": "center",
           "twp-logo_width": 150,
           "twp-header_text": "",
           "background": "#000000",
