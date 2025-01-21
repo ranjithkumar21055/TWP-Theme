@@ -194,6 +194,11 @@
         <div class="twp-mega_menu_body">
 
           <div class="twp-mega_menu_content">
+            {% for block in section.blocks %}
+              {% if block.type == 'link' %}
+                <a href="{{ block.settings.link_url }}">{{ block.settings.link_text }}</a>
+              {% endif %}
+            {% endfor %}
           </div>
            
         </div>
