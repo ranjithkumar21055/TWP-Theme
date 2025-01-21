@@ -1,13 +1,13 @@
 {
     "type": "header",
-    "name": "Header Group",
+    "name": "Header",
     "sections": {
-      "header": {
+      "twp-header": {
         "type": "twp-header",
         "settings": {
         }
       },
-      "announcement-bar": {
+      "twp-mega-menu": {
         "type": "twp-mega-menu",
         "settings": {
         }
