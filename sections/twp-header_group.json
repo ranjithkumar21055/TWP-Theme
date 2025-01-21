@@ -14,6 +14,14 @@
     "twp-header": {
       "type": "twp-header",
       "blocks": {
+        "announcement_bar_qpPMbk": {
+          "type": "announcement_bar",
+          "settings": {
+            "announcement_text": "Free shipping on all orders over $50",
+            "announcement_background": "#ffffff",
+            "announcement_text_color": "#000000"
+          }
+        },
         "mega_menu_CEUzAe": {
           "type": "mega_menu",
           "settings": {
@@ -23,6 +31,7 @@
         }
       },
       "block_order": [
+        "announcement_bar_qpPMbk",
         "mega_menu_CEUzAe"
       ],
       "settings": {
