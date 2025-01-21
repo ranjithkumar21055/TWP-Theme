@@ -8,7 +8,7 @@
         }
       },
       "twp-mega-menu": {
-        "type": "twp-mega-menu",
+        "type": "twp-mega-menu-content",
         "settings": {
         }
       }
