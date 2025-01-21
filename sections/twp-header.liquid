@@ -19,6 +19,9 @@
   .twp-icon_wrapper svg path {
     fill: {{ section.settings.svg-fill }};
   }
+  .twp-mega_menu {
+    background-color: {{ section.blocks[1].settings['mega-menu_background'] }};
+  }
   {% endstyle %}
 <div class="twp-header">
   {% for block in section.blocks %}
@@ -151,7 +154,15 @@
       </div>
     </div>
   </div>
+  <div class="twp-mega_menu">
+
+  </div>
 </div>
+
+<script>
+  const megaMenuMargin = document.querySelector('.twp-header').offsetHeight;
+  document.querySelector('.twp-mega_menu').style.top = `${megaMenuMargin}px`;
+</script>
 
 {% schema %}
 {
@@ -220,7 +231,22 @@
           "default": "#000000"
         }
       ]
+    },
+    {
+      "type": "mega_menu",
+      "name": "Mega Menu",
+      "settings": [
+        {
+          "type": "color",
+          "id": "mega-menu_background",
+          "label": "Background Color",
+          "default": "#ffffff"
+        }
+      ]
     }
   ]
+
+
+  
 }
 {% endschema %}

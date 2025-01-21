@@ -9,6 +9,7 @@
     display: flex;
     flex-direction: column;
     width: 100%;
+    position: relative;
 }
 
 .twp-announcement_bar {
@@ -61,6 +62,15 @@
 /* Mobile Menu */
 .twp-mobile_menu{
     display: none;
+}
+
+/* Mega Menu */
+.twp-mega_menu{
+    min-height: 40px;
+    width: 100%;
+    background-color: #fff;
+    position: fixed;
+    z-index: 5;
 }
 
 @media screen and (max-width: 1024px) {
