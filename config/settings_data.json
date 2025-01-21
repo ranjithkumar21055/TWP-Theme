@@ -144,16 +144,17 @@
               "announcement_text_color": "#000000"
             }
           },
-          "mega_menu_Lwx3FJ": {
+          "mega_menu_WHkTen": {
             "type": "mega_menu",
             "settings": {
-              "mega-menu_background": "#ffffff"
+              "mega-menu_background": "#ffffff",
+              "mega-menu_text_color": "#000000"
             }
           }
         },
         "block_order": [
           "announcement_bar_BHaxgX",
-          "mega_menu_Lwx3FJ"
+          "mega_menu_WHkTen"
         ],
         "settings": {
           "twp-logo": "shopify://shop_images/Group.svg",
