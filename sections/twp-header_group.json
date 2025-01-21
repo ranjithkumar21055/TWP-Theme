@@ -17,8 +17,8 @@
         "mega_menu_CEUzAe": {
           "type": "mega_menu",
           "settings": {
-            "mega-menu_background": "#ffffff",
-            "mega-menu_text_color": "#121212"
+            "mega-menu_background": "#121212",
+            "mega-menu_text_color": "#ffffff"
           }
         }
       },
@@ -30,7 +30,7 @@
         "twp-logo_position": "left",
         "twp-logo_width": 125,
         "twp-header_text": "",
-        "background": "#ffffff",
+        "background": "#121212",
         "svg-fill": "#ffffff",
         "menu": "main-menu"
       }
