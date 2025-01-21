@@ -154,9 +154,13 @@
       </div>
     </div>
   </div>
-  <div class="twp-mega_menu">
+  {%for blockin section.blocks %}
+    {% if block.type == 'mega_menu' %}
+      <div class="twp-mega_menu">
 
-  </div>
+      </div>
+    {%endif %}  
+  {%endfor %}
 </div>
 
 <script>
