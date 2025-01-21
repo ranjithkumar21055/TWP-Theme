@@ -3,18 +3,18 @@
     "name": "Header Group",
     "sections": {
       "header": {
-        "type": "header",
+        "type": "twp-header",
         "settings": {
         }
       },
       "announcement-bar": {
-        "type": "announcement-bar",
+        "type": "twp-mega-menu",
         "settings": {
         }
       }
     },
     "order": [
-      "announcement-bar",
-      "header"
+      "twp-header",
+      "twp-mega-menu"
     ]
     }
