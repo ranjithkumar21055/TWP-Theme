@@ -21,6 +21,7 @@
   }
   .twp-mega_menu {
     background-color: {{ section.blocks[1].settings['mega-menu_background'] }};
+    color: {{ section.blocks[1].settings['mega-menu_text_color'] }};
   }
 
   {% if section.settings.twp-logo_position == "center" %}
@@ -175,13 +176,17 @@
   {%for block in section.blocks %}
     {% if block.type == 'mega_menu' %}
       <div class="twp-mega_menu">
-        <ul class="twp-mega_menu_list page-width">
-          {% for link in section.settings.menu.links %}
-            <li class="twp-mega_menu_item">
-              <a href="{{ link.url }}">{{ link.title }}</a>
-            </li>
-          {% endfor %}
-        </ul>
+        {% for link in section.settings.menu.links  %}
+          {% if link.active and link.links.size > 0 %}
+            <ul class="twp-mega_menu_list page-width">
+            {% for child_link in link.links %}
+                <li class="twp-mega_menu_item">
+                  <a href="{{ child_link.url }}">{{ child_link.title }}</a>
+                </li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        {% endfor %}
       </div>
     {%endif %}  
   {%endfor %}
@@ -285,6 +290,12 @@
           "id": "mega-menu_background",
           "label": "Background Color",
           "default": "#ffffff"
+        },
+        {
+          "type": "color",
+          "id": "mega-menu_text_color",
+          "label": "Text Color",
+          "default": "#000000"
         }
       ]
     }

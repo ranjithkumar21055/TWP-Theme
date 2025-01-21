@@ -82,6 +82,9 @@
     position: fixed;
     top: 107px;
     z-index: 5;
+    display: flex;
+    justify-content: center;    
+    align-items: center;
 }
 
 .twp-mega_menu_list{
@@ -89,7 +92,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 30px;
+    gap: 100px;
     list-style: none;
     font-size: 16px;
 }
