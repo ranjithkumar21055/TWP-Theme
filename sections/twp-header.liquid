@@ -22,6 +22,24 @@
   .twp-mega_menu {
     background-color: {{ section.blocks[1].settings['mega-menu_background'] }};
   }
+
+  {% if section.settings.twp-logo_position == "center" %}
+    .twp-main_menu {
+      justify-content: start;
+      order: -1;
+    }
+    .twp-header_logo-link {
+      justify-content: center;
+    }
+  {% else %}
+    .twp-main_menu {
+      justify-content: center;
+      order: 0;
+    }
+    .twp-header_logo-link {
+      justify-content: start;
+    }
+  {% endif %} 
   {% endstyle %}
 <div class="twp-header">
   {% for block in section.blocks %}
@@ -62,7 +80,7 @@
           {% endfor %}
         </ul>
 
-        <div class="header__icons{% if section.settings.enable_country_selector or section.settings.enable_language_selector %} header__icons--localization header-localization{% endif %}">
+        <div class="header__icons twp-header_icons{% if section.settings.enable_country_selector or section.settings.enable_language_selector %} header__icons--localization header-localization{% endif %}">
           <div class="desktop-localization-wrapper">
             {%- if section.settings.enable_country_selector and localization.available_countries.size > 1 -%}
               <localization-form class="small-hide medium-hide" data-prevent-hide>
@@ -154,9 +172,19 @@
       </div>
     </div>
   </div>
-  <div class="twp-mega_menu">
-
-  </div>
+  {%for block in section.blocks %}
+    {% if block.type == 'mega_menu' %}
+      <div class="twp-mega_menu">
+        <ul class="twp-mega_menu_list page-width">
+          {% for link in section.settings.menu.links %}
+            <li class="twp-mega_menu_item">
+              <a href="{{ link.url }}">{{ link.title }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    {%endif %}  
+  {%endfor %}
 </div>
 
 <script>
@@ -174,6 +202,21 @@
       "type": "image_picker",
       "id": "twp-logo",
       "label": "Logo"
+    },
+    {"type": "select",
+      "id": "twp-logo_position",
+      "label": "Logo position",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        }
+      ],
+      "default": "left"
     },
     {
       "type": "range",

@@ -28,7 +28,7 @@
 .twp-header-menu_wrapper{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     width: 100%;
 }
@@ -40,6 +40,7 @@
 
 .twp-header_logo-link{
     display: flex;
+    width: 33.33%;
 }
 
 /* Main Menu */
@@ -50,9 +51,10 @@
 .twp-main_menu{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     align-items: center;
     gap: 30px;
+    font-size: 18px;
+    width: 33.33%;
 }
 
 .twp-nav_item a {
@@ -64,6 +66,14 @@
     display: none;
 }
 
+/* Header icons */
+.twp-header_icons{
+    width: 33.33%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
 /* Mega Menu */
 .twp-mega_menu{
     min-height: 40px;
@@ -72,6 +82,20 @@
     position: fixed;
     z-index: 5;
 }
+
+.twp-mega_menu_list{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    list-style: none;
+    font-size: 16px;
+}
+
+.twp-mega_menu_item a{
+    text-decoration: none;
+}   
 
 @media screen and (max-width: 1024px) {
     .twp-desktop_menu{
