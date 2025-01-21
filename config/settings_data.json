@@ -143,10 +143,17 @@
               "announcement_background": "#ffffff",
               "announcement_text_color": "#000000"
             }
+          },
+          "mega_menu_Lwx3FJ": {
+            "type": "mega_menu",
+            "settings": {
+              "mega-menu_background": "#ffffff"
+            }
           }
         },
         "block_order": [
-          "announcement_bar_BHaxgX"
+          "announcement_bar_BHaxgX",
+          "mega_menu_Lwx3FJ"
         ],
         "settings": {
           "twp-logo": "shopify://shop_images/Group.svg",
