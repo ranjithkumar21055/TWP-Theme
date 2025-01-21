@@ -3,7 +3,7 @@
     "name": "Header",
     "sections": {
       "twp-header": {
-        "type": "header",
+        "type": "section",
         "settings": {
           "title": "Header",
           "description": "Customize the header",
@@ -22,7 +22,7 @@
       }
     },
     "order": [
-      "header",
+      "twp-header",
       "twp-mega-menu-content"
     ]
     }
