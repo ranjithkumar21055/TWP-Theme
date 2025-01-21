@@ -42,8 +42,8 @@
     .twp-header_logo-link {
       justify-content: start;
     }
-  {% endif %} 
-  {% endstyle %}
+  {% endif %}
+{% endstyle %}
 <div class="twp-header">
   {% for block in section.blocks %}
     {% if block.type == 'announcement_bar' %}
@@ -175,23 +175,31 @@
       </div>
     </div>
   </div>
-  {%for block in section.blocks %}
+  {% for block in section.blocks %}
     {% if block.type == 'mega_menu' %}
       <div class="twp-mega_menu">
-        {% for link in section.settings.menu.links  %}
-          {% if link.active and link.links.size > 0 %}
-            <ul class="twp-mega_menu_list page-width">
-            {% for child_link in link.links %}
-                <li class="twp-mega_menu_item">
-                  <a href="{{ child_link.url }}">{{ child_link.title }}</a>
-                </li>
-              {% endfor %}
-            </ul>
-          {% endif %}
-        {% endfor %}
+        <div class="twp-mega_menu_head">
+          {% for link in section.settings.menu.links %}
+            {% if link.active and link.links.size > 0 %}
+              <ul class="twp-mega_menu_list page-width">
+                {% for child_link in link.links %}
+                  <li class="twp-mega_menu_item">
+                    <a href="{{ child_link.url }}">{{ child_link.title }}</a>
+                  </li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+          {% endfor %}
+        </div>
+        <div class="twp-mega_menu_body">
+
+          <div class="twp-mega_menu_content">
+          </div>
+           
+        </div>
       </div>
-    {%endif %}  
-  {%endfor %}
+    {% endif %}
+  {% endfor %}
 </div>
 
 <script>
@@ -210,7 +218,8 @@
       "id": "twp-logo",
       "label": "Logo"
     },
-    {"type": "select",
+    {
+      "type": "select",
       "id": "twp-logo_position",
       "label": "Logo position",
       "options": [
@@ -302,8 +311,5 @@
       ]
     }
   ]
-
-
-  
 }
 {% endschema %}
