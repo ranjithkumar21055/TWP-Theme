@@ -183,7 +183,7 @@
             {% if link.active and link.links.size > 0 %}
               <ul class="twp-mega_menu_list page-width">
                 {% for child_link in link.links %}
-                  <li class="twp-mega_menu_item">
+                  <li class="twp-mega_menu_item" data-mega-menu-name="{{ child_link.title }}">
                     <a href="{{ child_link.url }}">{{ child_link.title }}</a>
                   </li>
                 {% endfor %}
