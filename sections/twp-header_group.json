@@ -1,18 +1,47 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
-    "type": "header",
-    "name": "Header",
-    "sections": {
-        "twp-header" : {
-            "type" : "twp-header",
-            "settings" : {}
-        },
-        "twp-mega-menu-content" : {
-            "type" : "twp-mega-menu-content",
-            "settings" : {}
+  "type": "header",
+  "name": "Header",
+  "sections": {
+    "twp-header": {
+      "type": "twp-header",
+      "blocks": {
+        "mega_menu_CEUzAe": {
+          "type": "mega_menu",
+          "settings": {
+            "mega-menu_background": "#ffffff",
+            "mega-menu_text_color": "#121212"
+          }
         }
+      },
+      "block_order": [
+        "mega_menu_CEUzAe"
+      ],
+      "settings": {
+        "twp-logo": "shopify://shop_images/Group.svg",
+        "twp-logo_position": "left",
+        "twp-logo_width": 125,
+        "twp-header_text": "",
+        "background": "#ffffff",
+        "svg-fill": "#ffffff",
+        "menu": "main-menu"
+      }
     },
-    "order" : [
-        "twp-header",
-        "twp-mega-menu-content"
-    ]
+    "twp-mega-menu-content": {
+      "type": "twp-mega-menu-content",
+      "settings": {}
+    }
+  },
+  "order": [
+    "twp-header",
+    "twp-mega-menu-content"
+  ]
 }
