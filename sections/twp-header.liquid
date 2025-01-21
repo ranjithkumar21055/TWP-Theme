@@ -1,3 +1,5 @@
+{% section 'twp-header' %}
+
 {% style %}
   {% for block in section.blocks %}
     {% if block.type == 'announcement_bar' %}
@@ -312,48 +314,6 @@
           "id": "mega-menu_text_color",
           "label": "Text Color",
           "default": "#000000"
-        }
-      ]
-    }
-  ]
-}
-{% endschema %}
-
-{% schema %}
-{
-  "name": "Mega Menu Content",
-  "tag": "header",
-  "class": "twp-mega_menu_content",
-  "settings": [
-    {
-      "type": "color",
-      "id": "mega-menu_background",
-      "label": "Background Color",
-      "default": "#ffffff"
-    },
-    {
-      "type": "color",
-      "id": "mega-menu_text_color",
-      "label": "Text Color",
-      "default": "#000000"
-    }
-  ],
-  "blocks": [
-    {
-      "type": "link",
-      "name": "Link",
-      "settings": [
-        {
-          "type": "text",
-          "id": "link_text",
-          "label": "Link Text",
-          "default": "Link"
-        },
-        {
-          "type": "url",
-          "id": "link_url",
-          "label": "Link URL",
-          "default": "#"
         }
       ]
     }
