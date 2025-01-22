@@ -1,15 +1,23 @@
 <div class="twp-mega-menu-content">
   <div class="twp-mmc-wrapper" data-mega-menu-name="{{ section.settings.attribute_name }}">
-    {% if section.settings.attribute_name == "Men" %}
-        <p>   
-            This is some dummy text for the Men section.
-        </p> 
-    {% else %}
-        <p>   
-            This is some dummy text for other menu sections.
-        </p>
-
-    {% endif %}
+    <div class="twp-mmc-content">
+      {% for block in section.blocks %}
+        {% if block.type == 'mega_menu' %}
+          <div class="twp-mmc-links">
+            {% for link in block.settings.links %}
+              <a href="{{ link.url }}">{{ link.title }}</a>
+            {% endfor %}
+          </div>
+        {% endif %}
+        {% if block.type == 'image' %}
+          <div class="twp-mmc-image">
+            <a href="{{ block.settings.mmc_image_url }}">
+              <img src="{{ block.settings.mmc_image | img_url: 'master' }}" alt="{{ block.settings.mmc_image_title }}" width="{{ block.settings.mmc_image | img_width: 'master' }}" height="{{ block.settings.mmc_image | img_height: 'master' }}">
+            </a>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
   </div>
 </div>
 {% schema %}
@@ -17,6 +25,7 @@
   "name": "Mega Menu Content",
   "tag": "section",
   "class": "twp-mega-menu-content",
+  "max_blocks": 5,
   "settings": [
     {
       "type": "text",
@@ -24,6 +33,41 @@
       "label": "Mega Menu Item Name",
       "info": "Enter the name of the Mega Menu item to be linked."
     }
+  ],
+  "blocks": [
+    {
+      "type": "mega_menu",
+      "name": "Mega Menu section",
+      "settings": [
+        {
+          "type": "link_list",
+          "id": "links",
+          "label": "Links",
+          "info": "Add links to the Mega Menu."
+        }
+      ]
+    },
+    {
+        "type": "image_picker",
+        "name": "Image",
+        "settings": [
+            {
+                "type": "image_picker",
+                "id": "mmc_image",
+                "label": "Image"
+            },
+            {
+                "type": "text",
+                "id": "mmc_image_title",
+                "label": "Image Title"   
+            },
+            {
+                "type": "url",
+                "id": "mmc_image_url",
+                "label": "Image Link"   
+            }
+        ]
+      }
   ]
 }
 {% endschema %}
