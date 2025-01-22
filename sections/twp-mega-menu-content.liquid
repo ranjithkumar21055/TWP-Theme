@@ -1,9 +1,14 @@
 <div class="twp-mega-menu-content">
   <div class="twp-mmc-wrapper" data-mega-menu-name="{{ section.settings.attribute_name }}">
-    {% if section.settings.attribute_name.value == "Men" %}
+    {% if section.settings.attribute_name == "Men" %}
         <p>   
             This is some dummy text for the Men section.
         </p> 
+    {% else %}
+        <p>   
+            This is some dummy text for other menu sections.
+        </p>
+
     {% endif %}
   </div>
 </div>
