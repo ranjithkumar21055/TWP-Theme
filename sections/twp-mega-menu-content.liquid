@@ -3,12 +3,9 @@
     {% for block in section.blocks %}
       {% if block.type == 'list' %}
         <div class="twp-mmc-links">
-          <p>Hello</p>
-          {% comment %}
-            {% for link in block.settings.menu_links %}
-              <a href="{{ link.url }}">{{ link.title }}</a>
-            {% endfor %}
-          {% endcomment %}
+          {% for link in block.settings.menu_links %}
+            <a href="{{ link.url }}">{{ link.title }}</a>
+          {% endfor %}
         </div>
       {% endif %}
       {% if block.type == 'image' %}
