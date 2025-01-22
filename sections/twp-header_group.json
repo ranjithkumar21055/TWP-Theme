@@ -46,6 +46,17 @@
     },
     "twp-mega-menu-content": {
       "type": "twp-mega-menu-content",
+      "blocks": {
+        "mega_menu_TBeQY6": {
+          "type": "mega_menu",
+          "settings": {
+            "links": "main-menu"
+          }
+        }
+      },
+      "block_order": [
+        "mega_menu_TBeQY6"
+      ],
       "settings": {
         "attribute_name": "Men"
       }
