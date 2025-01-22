@@ -103,18 +103,21 @@
 /* Mega Menu Content */
 .twp-mega-menu-content{
     display: flex;
-    width: 100%;
-    min-height: 100px;
     background-color: #fff;
+    position: absolute;
 }
 
 .twp-mmc-wrapper{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    gap: 40px;
+    gap: 70px;
     width: 100%;
     padding: 20px;
+}
+
+.twp-mmc-menu_list_wrapper{
+    width: calc(100% / 6);
 }
 
 .twp-mmc-menu_list{
