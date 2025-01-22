@@ -5,7 +5,8 @@
       {% if block.type == 'menu_list' %}
         <div class="twp-mmc-menu">
           <ul class="twp-mmc-menu_list">
-            {% for link in block.settings.menu_links_1.links %}
+            {% assign links = block.settings.menu_links_1.links | append: block.settings.menu_links_2.links | append: block.settings.menu_links_3.links | append: block.settings.menu_links_4.links | append: block.settings.menu_links_5.links %}
+            {% for link in links %}
               <li class="twp-mmc-menu_item">
                 <a href="{{ link.url }}">{{ link.title }}</a>
                 {% if link.links.size > 0 %}
