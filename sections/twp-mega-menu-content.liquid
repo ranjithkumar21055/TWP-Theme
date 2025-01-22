@@ -1,11 +1,24 @@
 <div class="twp-mega-menu-content">
-    
+  <div class="twp-mmc-wrapper" data-mega-menu-name="{{ section.settings.attribute_name }}">
+    {% if section.settings.attribute_name.value == "Men" %}
+        <p>   
+            This is some dummy text for the Men section.
+        </p> 
+    {% endif %}
+  </div>
 </div>
 {% schema %}
 {
-    "name": "Mega Menu Content",
-    "tag": "section",
-    "class": "twp-mega-menu-content",
-    "settings": [],
+  "name": "Mega Menu Content",
+  "tag": "section",
+  "class": "twp-mega-menu-content",
+  "settings": [
+    {
+      "type": "text",
+      "id": "attribute_name",
+      "label": "Mega Menu Item Name",
+      "info": "Enter the name of the Mega Menu item to be linked."
+    }
+  ]
 }
 {% endschema %}
