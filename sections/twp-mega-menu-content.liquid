@@ -1,11 +1,11 @@
 {% style %}
-  {% if blocks.settings.menu_width = "full-width"%}
+  {% if section.settings.menu_width == "full-width"%}
     .twp-mega-menu-content {
       width: calc(100% - 40px);
       left: 20px;
     }
   {% endif %}
-  {% if blocks.settings.menu_width = "boxed"%}
+  {% if section.settings.menu_width =="boxed"%}
     .twp-mega-menu-content {
       width: 1280px;
       left: calc((100% - 1280px) / 2);
@@ -13,7 +13,7 @@
   {% endif %}
 {% endstyle %}
 
-<div class=" twp-mega-menu-content page-width">
+<div class=" twp-mega-menu-content">
   <div class="twp-mmc-wrapper" data-mega-menu-name="{{ section.settings.attribute_name }}">
     {% assign image_block = null %}
     {% for block in section.blocks %}
@@ -152,7 +152,23 @@
   "name": "Mega Menu Content",
   "tag": "section",
   "class": "twp-mega-menu-content",
-  "settings": [],
+  "settings": [
+    {
+        "type": "select",
+        "id": "menu_width",
+        "label": "Width",
+        "options": [
+          {
+            "value": "full-width",
+            "label": "Full Width"
+          },
+          {
+            "value": "boxed",
+            "label": "Boxed"
+          }
+        ]
+      }
+  ],
   "blocks": [
     {
       "type": "menu_list",
@@ -163,21 +179,6 @@
           "id": "attribute_name",
           "label": "Mega Menu Item Name",
           "info": "Enter the name of the Mega Menu item to be linked."
-        },
-        {
-          "type": "select",
-          "id": "menu_width",
-          "label": "Width",
-          "options": [
-            {
-              "value": "full-width",
-              "label": "Full Width"
-            },
-            {
-              "value": "boxed",
-              "label": "Boxed"
-            }
-          ]
         },
         {
           "type": "link_list",

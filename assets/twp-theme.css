@@ -105,6 +105,9 @@
     display: flex;
     background-color: #fff;
     position: absolute;
+    top: 70px;
+    z-index: 5;
+    width: 100%;
 }
 
 .twp-mmc-wrapper{
@@ -113,7 +116,7 @@
     justify-content: center;
     gap: 70px;
     width: 100%;
-    padding: 20px;
+    padding: 20px 70px;
 }
 
 .twp-mmc-menu_list_wrapper{
