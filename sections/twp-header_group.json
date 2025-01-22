@@ -25,8 +25,8 @@
         "mega_menu_CEUzAe": {
           "type": "mega_menu",
           "settings": {
-            "mega-menu_background": "#121212",
-            "mega-menu_text_color": "#ffffff"
+            "mega-menu_background": "#ffffff",
+            "mega-menu_text_color": "#000000"
           }
         }
       },
