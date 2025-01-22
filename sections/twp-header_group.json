@@ -47,15 +47,15 @@
     "twp-mega-menu-content": {
       "type": "twp-mega-menu-content",
       "blocks": {
-        "list_FRjnwQ": {
-          "type": "list",
+        "menu_list_MaidiQ": {
+          "type": "menu_list",
           "settings": {
             "menu_links": "main-menu"
           }
         }
       },
       "block_order": [
-        "list_FRjnwQ"
+        "menu_list_MaidiQ"
       ],
       "settings": {
         "attribute_name": "Men"
