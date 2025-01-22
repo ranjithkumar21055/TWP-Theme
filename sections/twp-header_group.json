@@ -52,10 +52,20 @@
           "settings": {
             "menu_links": "main-menu"
           }
+        },
+        "image_tg4eqa": {
+          "type": "image",
+          "settings": {
+            "mmc_image": "shopify://shop_images/fieldreport_vol2_back_c08e5a7a-d499-489a-8862-74a7d16c8a1c.jpg",
+            "mmc_image_alt": "Test",
+            "mmc_image_title": "Collection",
+            "mmc_image_url": "shopify://collections/hydrogen"
+          }
         }
       },
       "block_order": [
-        "menu_list_MaidiQ"
+        "menu_list_MaidiQ",
+        "image_tg4eqa"
       ],
       "settings": {
         "attribute_name": "Men"
