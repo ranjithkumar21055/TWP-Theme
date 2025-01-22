@@ -80,8 +80,6 @@
     min-height: 40px;
     width: 100%;
     background-color: #fff;
-    position: fixed;
-    top: 107px;
     z-index: 5;
     display: flex;
     justify-content: center;    
@@ -100,7 +98,15 @@
 
 .twp-mega_menu_item a{
     text-decoration: none;
-}   
+} 
+
+/* Mega Menu Content */
+.twp-mega-menu-content{
+    display: flex;
+    width: 100%;
+    min-height: 100px;
+    background-color: #fff;
+}
 
 @media screen and (max-width: 1024px) {
     .twp-desktop_menu{

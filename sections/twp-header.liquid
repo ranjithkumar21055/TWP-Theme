@@ -73,7 +73,6 @@
           <h1 class="twp-shop_name">{{ shop.name }}</h1>
         {% endif %}
       {% endif %}
-
       <div class="twp-desktop_menu">
         <ul class="twp-main_menu">
           {% for link in section.settings.menu.links %}
@@ -191,25 +190,13 @@
             {% endif %}
           {% endfor %}
         </div>
-        {% comment %}
-          <div class="twp-mega_menu_body">
-            <div class="twp-mega_menu_content">
-              {% for block in section.blocks %}
-                {% if block.type == 'link' %}
-                  <a href="{{ block.settings.link_url }}">{{ block.settings.link_text }}</a>
-                {% endif %}
-              {% endfor %}
-            </div>
-          </div>
-        {% endcomment %}
       </div>
     {% endif %}
   {% endfor %}
 </div>
 
-<script>
-  const megaMenuMargin = document.querySelector('.twp-header').offsetHeight;
-  document.querySelector('.twp-mega_menu').style.top = `${megaMenuMargin}px`;
+<script>  
+  
 </script>
 
 {% schema %}
