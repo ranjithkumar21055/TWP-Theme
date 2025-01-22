@@ -47,31 +47,20 @@
     "twp-mega-menu-content": {
       "type": "twp-mega-menu-content",
       "blocks": {
-        "image_tg4eqa": {
-          "type": "image",
-          "settings": {
-            "attribute_name_1": "",
-            "mmc_image": "shopify://shop_images/fieldreport_vol2_back_c08e5a7a-d499-489a-8862-74a7d16c8a1c.jpg",
-            "mmc_image_alt": "Test",
-            "mmc_image_title": "Collection",
-            "mmc_image_url": "shopify://collections/hydrogen"
-          }
-        },
-        "menu_list_MaidiQ": {
+        "menu_list_yH7RYi": {
           "type": "menu_list",
           "settings": {
-            "attribute_name": "Men",
+            "attribute_name": "",
             "menu_links_1": "main-menu",
-            "menu_links_2": "main-menu",
-            "menu_links_3": "main-menu",
-            "menu_links_4": "main-menu",
+            "menu_links_2": "",
+            "menu_links_3": "",
+            "menu_links_4": "",
             "menu_links_5": ""
           }
         }
       },
       "block_order": [
-        "image_tg4eqa",
-        "menu_list_MaidiQ"
+        "menu_list_yH7RYi"
       ],
       "settings": {}
     }
