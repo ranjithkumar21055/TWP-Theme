@@ -195,8 +195,22 @@
   {% endfor %}
 </div>
 
-<script>  
-  
+<script>
+  const megaMenuItem = document.querySelectorAll('.twp-mega_menu_item');
+  megaMenuItem.forEach((item) => {
+    item.addEventListener('mouseover', () => {
+      var megaMenuContent = document.querySelector(
+        `.twp-mmc-wrapper[data-mega-menu-name="${item.dataset.megaMenuName}"]`
+      );
+      megaMenuContent.style.display = 'block';
+    });
+    item.addEventListener('mouseout', () => {
+      var megaMenuContent = document.querySelector(
+        `.twp-mmc-wrapper[data-mega-menu-name="${item.dataset.megaMenuName}"]`
+      );
+      megaMenuContent.style.display = 'none';
+    });
+  });
 </script>
 
 {% schema %}
