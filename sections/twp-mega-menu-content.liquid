@@ -5,7 +5,7 @@
       {% if block.type == 'menu_list' %}
         <div class="twp-mmc-menu">
           <ul class="twp-mmc-menu_list">
-            {% for link in block.settings.menu_links.links %}
+            {% for link in block.settings.menu_links_1.links %}
               <li class="twp-mmc-menu_item">
                 <a href="{{ link.url }}">{{ link.title }}</a>
                 {% if link.links.size > 0 %}
