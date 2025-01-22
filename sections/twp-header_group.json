@@ -58,10 +58,23 @@
             "menu_links_5": "main-menu",
             "menu_links_6": "main-menu"
           }
+        },
+        "menu_list_3c6WMD": {
+          "type": "menu_list",
+          "settings": {
+            "attribute_name": "Women",
+            "menu_links_1": "footer",
+            "menu_links_2": "footer",
+            "menu_links_3": "customer-account-main-menu",
+            "menu_links_4": "footer",
+            "menu_links_5": "footer",
+            "menu_links_6": "main-menu"
+          }
         }
       },
       "block_order": [
-        "menu_list_yH7RYi"
+        "menu_list_yH7RYi",
+        "menu_list_3c6WMD"
       ],
       "settings": {
         "menu_width": "full-width"
