@@ -1,21 +1,27 @@
 <div class="twp-mega-menu-content">
   <div class="twp-mmc-wrapper" data-mega-menu-name="{{ section.settings.attribute_name }}">
     {% for block in section.blocks %}
-      {% if block.type == 'list' %}
-        <div class="twp-mmc-links">
-          {% for link in block.settings.menu_links %}
-            <a href="{{ link.url }}">{{ link.title }}</a>
-          {% endfor %}
+      {% if block.type == 'menu_list' %}
+        <p>HEllo</p>
+        <p>{{ block.settings.menu_links.links }}</p>
+        <div class="twp-mmc-menu">
+          <ul class="twp-mmc-menu_list">
+            {% for link in block.settings.menu_links.links %}
+              <li class="twp-mmc-menu_item">
+                <a href="{{ link.url }}">{{ link.title }}</a>
+              </li>
+            {% endfor %}
+          </ul>
         </div>
       {% endif %}
       {% if block.type == 'image' %}
         <div class="twp-mmc-image">
           <a href="{{ block.settings.mmc_image_url }}">
             <img
-              src="{{ block.settings.mmc_image | img_url: 'master' }}"
+              src="{{ block.settings.mmc_image }}"
               alt="{{ block.settings.mmc_image_title }}"
-              width="{{ block.settings.mmc_image | img_width: 'master' }}"
-              height="{{ block.settings.mmc_image | img_height: 'master' }}"
+              width="{{ block.settings.mmc_image }}"
+              height="{{ block.settings.mmc_image }}"
             >
           </a>
         </div>
@@ -39,7 +45,7 @@
   ],
   "blocks": [
     {
-      "type": "list",
+      "type": "menu_list",
       "name": "Menu",
       "settings": [
         {
