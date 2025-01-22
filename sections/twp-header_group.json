@@ -47,12 +47,6 @@
     "twp-mega-menu-content": {
       "type": "twp-mega-menu-content",
       "blocks": {
-        "menu_list_MaidiQ": {
-          "type": "menu_list",
-          "settings": {
-            "menu_links": "main-menu"
-          }
-        },
         "image_tg4eqa": {
           "type": "image",
           "settings": {
@@ -61,11 +55,17 @@
             "mmc_image_title": "Collection",
             "mmc_image_url": "shopify://collections/hydrogen"
           }
+        },
+        "menu_list_MaidiQ": {
+          "type": "menu_list",
+          "settings": {
+            "menu_links": "main-menu"
+          }
         }
       },
       "block_order": [
-        "menu_list_MaidiQ",
-        "image_tg4eqa"
+        "image_tg4eqa",
+        "menu_list_MaidiQ"
       ],
       "settings": {
         "attribute_name": "Men"
