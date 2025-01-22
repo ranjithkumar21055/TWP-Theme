@@ -46,7 +46,9 @@
     },
     "twp-mega-menu-content": {
       "type": "twp-mega-menu-content",
-      "settings": {}
+      "settings": {
+        "attribute_name": "Men"
+      }
     }
   },
   "order": [
