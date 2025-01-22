@@ -39,7 +39,7 @@
         "twp-logo_position": "left",
         "twp-logo_width": 125,
         "twp-header_text": "",
-        "background": "#ffffff",
+        "background": "#000000",
         "svg-fill": "#ffffff",
         "menu": "main-menu"
       }
