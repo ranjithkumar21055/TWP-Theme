@@ -4,7 +4,7 @@
       {% for block in section.blocks %}
         {% if block.type == 'menu' %}
           <div class="twp-mmc-links">
-            {% for link in block.settings.links %}
+            {% for link in section.blocks[0].settings.menu_links %}
               <a href="{{ link.url }}">{{ link.title }}</a>
             {% endfor %}
           </div>
@@ -36,12 +36,12 @@
   ],
   "blocks": [
     {
-      "type": "menu",
+      "type": "list",
       "name": "Menu",
       "settings": [
         {
           "type": "link_list",
-          "id": "links",
+          "id": "menu_links",
           "label": "Links",
           "info": "Add links to the Mega Menu."
         }
