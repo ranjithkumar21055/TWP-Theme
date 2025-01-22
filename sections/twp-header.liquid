@@ -202,13 +202,17 @@
       var megaMenuContent = document.querySelector(
         `.twp-mmc-wrapper[data-mega-menu-name="${item.dataset.megaMenuName}"]`
       );
-      megaMenuContent.style.display = 'block';
+      if (megaMenuContent){
+        megaMenuContent.style.display = 'flex';
+      }
     });
     item.addEventListener('mouseout', () => {
       var megaMenuContent = document.querySelector(
         `.twp-mmc-wrapper[data-mega-menu-name="${item.dataset.megaMenuName}"]`
       );
-      megaMenuContent.style.display = 'none';
+      if (megaMenuContent){
+        megaMenuContent.style.display = 'none';
+      }
     });
   });
 </script>

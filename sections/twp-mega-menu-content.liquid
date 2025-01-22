@@ -13,10 +13,10 @@
   {% endif %}
 {% endstyle %}
 
+{% for block in section.blocks %}
 <div class=" twp-mega-menu-content">
-  <div class="twp-mmc-wrapper" data-mega-menu-name="{{ section.settings.attribute_name }}">
+  <div class="twp-mmc-wrapper" data-mega-menu-name="{{ block.settings.attribute_name }}">
     {% assign image_block = null %}
-    {% for block in section.blocks %}
       {% if block.type == 'menu_list' %}
         <div class="twp-mmc-menu_list_wrapper">
           {% for link in block.settings.menu_links_1.links %}
@@ -130,23 +130,23 @@
       {% if block.type == 'image' %}
         {% assign image_block = block %}
       {% endif %}
-    {% endfor %}
-
-    {% if image_block %}
-      <div class="twp-mmc-image">
-        <a href="{{ image_block.settings.mmc_image_url }}" class="twp-mmc-image_wrapper">
-          <img
-            src="{{ image_block.settings.mmc_image | img_url: 'master' }}"
-            alt="{{ image_block.settings.mmc_image_alt }}"
-            width="100%"
-            height="100%"
-          >
-        </a>
-        <p class="twp-mmc-image_title">{{ image_block.settings.mmc_image_title }}</p>
+      
+      {% if image_block %}
+        <div class="twp-mmc-image">
+          <a href="{{ image_block.settings.mmc_image_url }}" class="twp-mmc-image_wrapper">
+            <img
+              src="{{ image_block.settings.mmc_image | img_url: 'master' }}"
+              alt="{{ image_block.settings.mmc_image_alt }}"
+              width="100%"
+              height="100%"
+            >
+            </a>
+            <p class="twp-mmc-image_title">{{ image_block.settings.mmc_image_title }}</p>
+          </div>
+        {% endif %}
       </div>
-    {% endif %}
-  </div>
-</div>
+    </div>
+  {% endfor %}
 {% schema %}
 {
   "name": "Mega Menu Content",
