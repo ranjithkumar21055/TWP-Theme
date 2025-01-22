@@ -47,15 +47,24 @@
     "twp-mega-menu-content": {
       "type": "twp-mega-menu-content",
       "blocks": {
-        "mega_menu_TBeQY6": {
-          "type": "mega_menu",
+        "list_ajFwHm": {
+          "type": "list",
           "settings": {
-            "links": "main-menu"
+            "menu_links": "main-menu"
+          }
+        },
+        "image_picker_ngeTCJ": {
+          "type": "image_picker",
+          "settings": {
+            "mmc_image": "shopify://shop_images/hudderton-backpack_dc8afb13-448b-49d9-a042-5a163a97de8f.jpg",
+            "mmc_image_title": "Image",
+            "mmc_image_url": "#"
           }
         }
       },
       "block_order": [
-        "mega_menu_TBeQY6"
+        "list_ajFwHm",
+        "image_picker_ngeTCJ"
       ],
       "settings": {
         "attribute_name": "Men"
