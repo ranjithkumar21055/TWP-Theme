@@ -47,24 +47,15 @@
     "twp-mega-menu-content": {
       "type": "twp-mega-menu-content",
       "blocks": {
-        "list_ajFwHm": {
+        "list_FRjnwQ": {
           "type": "list",
           "settings": {
             "menu_links": "main-menu"
           }
-        },
-        "image_tUeqNE": {
-          "type": "image",
-          "settings": {
-            "mmc_image": "shopify://shop_images/product_lifestyle-28.jpg",
-            "mmc_image_title": "",
-            "mmc_image_url": ""
-          }
         }
       },
       "block_order": [
-        "list_ajFwHm",
-        "image_tUeqNE"
+        "list_FRjnwQ"
       ],
       "settings": {
         "attribute_name": "Men"
