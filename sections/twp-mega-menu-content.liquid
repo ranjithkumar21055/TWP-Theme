@@ -1,23 +1,29 @@
 <div class="twp-mega-menu-content">
   <div class="twp-mmc-wrapper" data-mega-menu-name="{{ section.settings.attribute_name }}">
-    <div class="twp-mmc-content">
-      {% for block in section.blocks %}
-        {% if block.type == 'menu' %}
-          <div class="twp-mmc-links">
-            {% for link in section.blocks[0].settings.menu_links %}
+    {% for block in section.blocks %}
+      {% if block.type == 'list' %}
+        <div class="twp-mmc-links">
+          <p>Hello</p>
+          {% comment %}
+            {% for link in block.settings.menu_links %}
               <a href="{{ link.url }}">{{ link.title }}</a>
             {% endfor %}
-          </div>
-        {% endif %}
-        {% if block.type == 'image' %}
-          <div class="twp-mmc-image">
-            <a href="{{ block.settings.mmc_image_url }}">
-              <img src="{{ block.settings.mmc_image | img_url: 'master' }}" alt="{{ block.settings.mmc_image_title }}" width="{{ block.settings.mmc_image | img_width: 'master' }}" height="{{ block.settings.mmc_image | img_height: 'master' }}">
-            </a>
-          </div>
-        {% endif %}
-      {% endfor %}
-    </div>
+          {% endcomment %}
+        </div>
+      {% endif %}
+      {% if block.type == 'image' %}
+        <div class="twp-mmc-image">
+          <a href="{{ block.settings.mmc_image_url }}">
+            <img
+              src="{{ block.settings.mmc_image | img_url: 'master' }}"
+              alt="{{ block.settings.mmc_image_title }}"
+              width="{{ block.settings.mmc_image | img_width: 'master' }}"
+              height="{{ block.settings.mmc_image | img_height: 'master' }}"
+            >
+          </a>
+        </div>
+      {% endif %}
+    {% endfor %}
   </div>
 </div>
 {% schema %}
@@ -48,26 +54,26 @@
       ]
     },
     {
-        "type": "image_picker",
-        "name": "Image",
-        "settings": [
-            {
-                "type": "image_picker",
-                "id": "mmc_image",
-                "label": "Image"
-            },
-            {
-                "type": "text",
-                "id": "mmc_image_title",
-                "label": "Image Title"   
-            },
-            {
-                "type": "url",
-                "id": "mmc_image_url",
-                "label": "Image Link"   
-            }
-        ]
-      }
+      "type": "image",
+      "name": "Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "mmc_image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "mmc_image_title",
+          "label": "Image Title"
+        },
+        {
+          "type": "url",
+          "id": "mmc_image_url",
+          "label": "Image Link"
+        }
+      ]
+    }
   ]
 }
 {% endschema %}
