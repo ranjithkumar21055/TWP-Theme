@@ -2,7 +2,7 @@
   <div class="twp-mmc-wrapper" data-mega-menu-name="{{ section.settings.attribute_name }}">
     <div class="twp-mmc-content">
       {% for block in section.blocks %}
-        {% if block.type == 'mega_menu' %}
+        {% if block.type == 'menu' %}
           <div class="twp-mmc-links">
             {% for link in block.settings.links %}
               <a href="{{ link.url }}">{{ link.title }}</a>
@@ -36,8 +36,8 @@
   ],
   "blocks": [
     {
-      "type": "mega_menu",
-      "name": "Mega Menu section",
+      "type": "menu",
+      "name": "Menu",
       "settings": [
         {
           "type": "link_list",
