@@ -119,6 +119,10 @@
     padding: 20px 70px;
 }
 
+.twp-mmc-wrapper.twp-active{
+    display: flex;
+}
+
 .twp-mmc-menu_list_wrapper{
     width: calc(100% / 6);
 }

@@ -196,23 +196,53 @@
 </div>
 
 <script>
-  const megaMenuItem = document.querySelectorAll('.twp-mega_menu_item');
-  megaMenuItem.forEach((item) => {
-    item.addEventListener('mouseover', () => {
+  document.addEventListener('DOMContentLoaded', function() {
+    const megaMenuItem = document.querySelectorAll('.twp-mega_menu_item');
+    megaMenuItem.forEach((item) => {
+      var megaMenuName = item.dataset.megaMenuName;
       var megaMenuContent = document.querySelector(
         `.twp-mmc-wrapper[data-mega-menu-name="${item.dataset.megaMenuName}"]`
       );
-      if (megaMenuContent) {
-        megaMenuContent.style.display = 'flex';
-      }
-    });
-    item.addEventListener('mouseout', () => {
-      var megaMenuContent = document.querySelector(
-        `.twp-mmc-wrapper[data-mega-menu-name="${item.dataset.megaMenuName}"]`
-      );
-      if (megaMenuContent) {
-        megaMenuContent.style.display = 'none';
-      }
+      var hoverElems = document.querySelectorAll(`[data-mega-menu-name="${megaMenuName}"]`);
+      hoverElems.forEach((hoverElem) => {
+        hoverElem.addEventListener('mouseover', () => {
+          hoverElem.classList.add('twp-active');
+          if (megaMenuContent) {
+            megaMenuContent.classList.add('twp-active');
+          }
+        });
+        hoverElem.addEventListener('mouseleave', () => {
+          hoverElem.classList.remove('twp-active');
+        });
+      });
+
+
+      {% comment %} item.addEventListener('mouseover', () => {
+        var megaMenuContent = document.querySelector(
+          `.twp-mmc-wrapper[data-mega-menu-name="${item.dataset.megaMenuName}"]`
+        );
+        if (megaMenuContent) {
+          megaMenuContent.style.display = 'flex';
+          item.classList.add('twp-active');
+          megaMenuContent.classList.add('twp-active');
+        }
+      });
+      item.addEventListener('mouseout', () => {
+        item.classList.remove('twp-active');
+        const activeItems = document.querySelectorAll('.twp-active');
+        activeItems.forEach((activeItem) => {
+          activeItem.addEventListener('mouseleave', () => {
+            activeItem.classList.remove('twp-active');
+            var megaMenuContent = document.querySelector(
+              `.twp-mmc-wrapper[data-mega-menu-name="${item.dataset.megaMenuName}"]`
+            );
+            if (megaMenuContent) {
+              
+              megaMenuContent.style.display = 'none';
+            }
+          });
+        });
+      }); {% endcomment %}
     });
   });
 </script>
