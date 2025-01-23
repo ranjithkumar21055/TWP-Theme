@@ -70,11 +70,22 @@
             "menu_links_5": "footer",
             "menu_links_6": "main-menu"
           }
+        },
+        "image_iNxGkd": {
+          "type": "image",
+          "settings": {
+            "attribute_name_1": "Children",
+            "mmc_image": "shopify://shop_images/product_lifestyle-28.jpg",
+            "mmc_image_alt": "",
+            "mmc_image_title": "",
+            "mmc_image_url": ""
+          }
         }
       },
       "block_order": [
         "menu_list_yH7RYi",
-        "menu_list_3c6WMD"
+        "menu_list_3c6WMD",
+        "image_iNxGkd"
       ],
       "settings": {
         "menu_width": "full-width"
