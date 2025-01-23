@@ -14,302 +14,303 @@
 {% endstyle %}
 
 {% for block in section.blocks %}
-  
-  <div class=" twp-mega-menu-content">
-    <div class="twp-mmc-wrapper" data-mega-menu-name="{{ block.settings.attribute_name }}">
-      {% if block.type == 'menu_list' %}
-        <div class="twp-mmc-menu_list_wrapper">
-          {% for link in block.settings.menu_links_1.links %}
-            <ul class="twp-mmc-menu_list">
-              <li class="twp-mmc-menu_item">
-                <a href="{{ link.url }}">{{ link.title }}</a>
-                {% if link.links.size > 0 %}
-                  <ul class="twp-mmc-submenu_list">
-                    {% for child_link in link.links %}
-                      <li class="twp-mm-submenu_item">
-                        <a href="{{ child_link.url }}">{{ child_link.title }}</a>
-                      </li>
-                    {% endfor %}
-                  </ul>
-                {% endif %}
-              </li>
-            </ul>
-          {% endfor %}
-        </div>
-        <div class="twp-mmc-menu_list_wrapper">
-          {% for link in block.settings.menu_links_2.links %}
-            <ul class="twp-mmc-menu_list">
-              <li class="twp-mmc-menu_item">
-                <a href="{{ link.url }}">{{ link.title }}</a>
-                {% if link.links.size > 0 %}
-                  <ul class="twp-mmc-submenu_list">
-                    {% for child_link in link.links %}
-                      <li class="twp-mm-submenu_item">
-                        <a href="{{ child_link.url }}">{{ child_link.title }}</a>
-                      </li>
-                    {% endfor %}
-                  </ul>
-                {% endif %}
-              </li>
-            </ul>
-          {% endfor %}
-        </div>
-        <div class="twp-mmc-menu_list_wrapper">
-          {% for link in block.settings.menu_links_3.links %}
-            <ul class="twp-mmc-menu_list">
-              <li class="twp-mmc-menu_item">
-                <a href="{{ link.url }}">{{ link.title }}</a>
-                {% if link.links.size > 0 %}
-                  <ul class="twp-mmc-submenu_list">
-                    {% for child_link in link.links %}
-                      <li class="twp-mm-submenu_item">
-                        <a href="{{ child_link.url }}">{{ child_link.title }}</a>
-                      </li>
-                    {% endfor %}
-                  </ul>
-                {% endif %}
-              </li>
-            </ul>
-          {% endfor %}
-        </div>
-        <div class="twp-mmc-menu_list_wrapper">
-          {% for link in block.settings.menu_links_4.links %}
-            <ul class="twp-mmc-menu_list">
-              <li class="twp-mmc-menu_item">
-                <a href="{{ link.url }}">{{ link.title }}</a>
-                {% if link.links.size > 0 %}
-                  <ul class="twp-mmc-submenu_list">
-                    {% for child_link in link.links %}
-                      <li class="twp-mm-submenu_item">
-                        <a href="{{ child_link.url }}">{{ child_link.title }}</a>
-                      </li>
-                    {% endfor %}
-                  </ul>
-                {% endif %}
-              </li>
-            </ul>
-          {% endfor %}
-        </div>
-        <div class="twp-mmc-menu_list_wrapper">
-          {% for link in block.settings.menu_links_5.links %}
-            <ul class="twp-mmc-menu_list">
-              <li class="twp-mmc-menu_item">
-                <a href="{{ link.url }}">{{ link.title }}</a>
-                {% if link.links.size > 0 %}
-                  <ul class="twp-mmc-submenu_list">
-                    {% for child_link in link.links %}
-                      <li class="twp-mm-submenu_item">
-                        <a href="{{ child_link.url }}">{{ child_link.title }}</a>
-                      </li>
-                    {% endfor %}
-                  </ul>
-                {% endif %}
-              </li>
-            </ul>
-          {% endfor %}
-        </div>
-        <div class="twp-mmc-menu_list_wrapper">
-          {% for link in block.settings.menu_links_6.links %}
-            <ul class="twp-mmc-menu_list">
-              <li class="twp-mmc-menu_item">
-                <a href="{{ link.url }}">{{ link.title }}</a>
-                {% if link.links.size > 0 %}
-                  <ul class="twp-mmc-submenu_list">
-                    {% for child_link in link.links %}
-                      <li class="twp-mm-submenu_item">
-                        <a href="{{ child_link.url }}">{{ child_link.title }}</a>
-                      </li>
-                    {% endfor %}
-                  </ul>
-                {% endif %}
-              </li>
-            </ul>
-          {% endfor %}
-        </div>
-      {% endif %}
+  {% if block.type == "menu_list" or block.type == "menu_list_2" or block.type == "menu_list_3" %}
+    <div class=" twp-mega-menu-content">
+      <div class="twp-mmc-wrapper" data-mega-menu-name="{{ block.settings.attribute_name }}">
+        {% if block.type == 'menu_list' %}
+          <div class="twp-mmc-menu_list_wrapper">
+            {% for link in block.settings.menu_links_1.links %}
+              <ul class="twp-mmc-menu_list">
+                <li class="twp-mmc-menu_item">
+                  <a href="{{ link.url }}">{{ link.title }}</a>
+                  {% if link.links.size > 0 %}
+                    <ul class="twp-mmc-submenu_list">
+                      {% for child_link in link.links %}
+                        <li class="twp-mm-submenu_item">
+                          <a href="{{ child_link.url }}">{{ child_link.title }}</a>
+                        </li>
+                      {% endfor %}
+                    </ul>
+                  {% endif %}
+                </li>
+              </ul>
+            {% endfor %}
+          </div>
+          <div class="twp-mmc-menu_list_wrapper">
+            {% for link in block.settings.menu_links_2.links %}
+              <ul class="twp-mmc-menu_list">
+                <li class="twp-mmc-menu_item">
+                  <a href="{{ link.url }}">{{ link.title }}</a>
+                  {% if link.links.size > 0 %}
+                    <ul class="twp-mmc-submenu_list">
+                      {% for child_link in link.links %}
+                        <li class="twp-mm-submenu_item">
+                          <a href="{{ child_link.url }}">{{ child_link.title }}</a>
+                        </li>
+                      {% endfor %}
+                    </ul>
+                  {% endif %}
+                </li>
+              </ul>
+            {% endfor %}
+          </div>
+          <div class="twp-mmc-menu_list_wrapper">
+            {% for link in block.settings.menu_links_3.links %}
+              <ul class="twp-mmc-menu_list">
+                <li class="twp-mmc-menu_item">
+                  <a href="{{ link.url }}">{{ link.title }}</a>
+                  {% if link.links.size > 0 %}
+                    <ul class="twp-mmc-submenu_list">
+                      {% for child_link in link.links %}
+                        <li class="twp-mm-submenu_item">
+                          <a href="{{ child_link.url }}">{{ child_link.title }}</a>
+                        </li>
+                      {% endfor %}
+                    </ul>
+                  {% endif %}
+                </li>
+              </ul>
+            {% endfor %}
+          </div>
+          <div class="twp-mmc-menu_list_wrapper">
+            {% for link in block.settings.menu_links_4.links %}
+              <ul class="twp-mmc-menu_list">
+                <li class="twp-mmc-menu_item">
+                  <a href="{{ link.url }}">{{ link.title }}</a>
+                  {% if link.links.size > 0 %}
+                    <ul class="twp-mmc-submenu_list">
+                      {% for child_link in link.links %}
+                        <li class="twp-mm-submenu_item">
+                          <a href="{{ child_link.url }}">{{ child_link.title }}</a>
+                        </li>
+                      {% endfor %}
+                    </ul>
+                  {% endif %}
+                </li>
+              </ul>
+            {% endfor %}
+          </div>
+          <div class="twp-mmc-menu_list_wrapper">
+            {% for link in block.settings.menu_links_5.links %}
+              <ul class="twp-mmc-menu_list">
+                <li class="twp-mmc-menu_item">
+                  <a href="{{ link.url }}">{{ link.title }}</a>
+                  {% if link.links.size > 0 %}
+                    <ul class="twp-mmc-submenu_list">
+                      {% for child_link in link.links %}
+                        <li class="twp-mm-submenu_item">
+                          <a href="{{ child_link.url }}">{{ child_link.title }}</a>
+                        </li>
+                      {% endfor %}
+                    </ul>
+                  {% endif %}
+                </li>
+              </ul>
+            {% endfor %}
+          </div>
+          <div class="twp-mmc-menu_list_wrapper">
+            {% for link in block.settings.menu_links_6.links %}
+              <ul class="twp-mmc-menu_list">
+                <li class="twp-mmc-menu_item">
+                  <a href="{{ link.url }}">{{ link.title }}</a>
+                  {% if link.links.size > 0 %}
+                    <ul class="twp-mmc-submenu_list">
+                      {% for child_link in link.links %}
+                        <li class="twp-mm-submenu_item">
+                          <a href="{{ child_link.url }}">{{ child_link.title }}</a>
+                        </li>
+                      {% endfor %}
+                    </ul>
+                  {% endif %}
+                </li>
+              </ul>
+            {% endfor %}
+          </div>
+        {% endif %}
 
-      {% if block.type == 'menu_list_2' %}
-        <div class="twp-mmc-link_wrapper">
-          <div class="twp-mmc-menu_list_wrapper_2">
-            {% for link in block.settings.menu_links_7.links %}
-              <ul class="twp-mmc-menu_list">
-                <li class="twp-mmc-menu_item">
-                  <a href="{{ link.url }}">{{ link.title }}</a>
-                  {% if link.links.size > 0 %}
-                    <ul class="twp-mmc-submenu_list">
-                      {% for child_link in link.links %}
-                        <li class="twp-mm-submenu_item">
-                          <a href="{{ child_link.url }}">{{ child_link.title }}</a>
-                        </li>
-                      {% endfor %}
-                    </ul>
-                  {% endif %}
-                </li>
-              </ul>
-            {% endfor %}
+        {% if block.type == 'menu_list_2' %}
+          <div class="twp-mmc-link_wrapper">
+            <div class="twp-mmc-menu_list_wrapper_2">
+              {% for link in block.settings.menu_links_7.links %}
+                <ul class="twp-mmc-menu_list">
+                  <li class="twp-mmc-menu_item">
+                    <a href="{{ link.url }}">{{ link.title }}</a>
+                    {% if link.links.size > 0 %}
+                      <ul class="twp-mmc-submenu_list">
+                        {% for child_link in link.links %}
+                          <li class="twp-mm-submenu_item">
+                            <a href="{{ child_link.url }}">{{ child_link.title }}</a>
+                          </li>
+                        {% endfor %}
+                      </ul>
+                    {% endif %}
+                  </li>
+                </ul>
+              {% endfor %}
+            </div>
+            <div class="twp-mmc-menu_list_wrapper_2">
+              {% for link in block.settings.menu_links_8.links %}
+                <ul class="twp-mmc-menu_list">
+                  <li class="twp-mmc-menu_item">
+                    <a href="{{ link.url }}">{{ link.title }}</a>
+                    {% if link.links.size > 0 %}
+                      <ul class="twp-mmc-submenu_list">
+                        {% for child_link in link.links %}
+                          <li class="twp-mm-submenu_item">
+                            <a href="{{ child_link.url }}">{{ child_link.title }}</a>
+                          </li>
+                        {% endfor %}
+                      </ul>
+                    {% endif %}
+                  </li>
+                </ul>
+              {% endfor %}
+            </div>
+            <div class="twp-mmc-menu_list_wrapper_2">
+              {% for link in block.settings.menu_links_9.links %}
+                <ul class="twp-mmc-menu_list">
+                  <li class="twp-mmc-menu_item">
+                    <a href="{{ link.url }}">{{ link.title }}</a>
+                    {% if link.links.size > 0 %}
+                      <ul class="twp-mmc-submenu_list">
+                        {% for child_link in link.links %}
+                          <li class="twp-mm-submenu_item">
+                            <a href="{{ child_link.url }}">{{ child_link.title }}</a>
+                          </li>
+                        {% endfor %}
+                      </ul>
+                    {% endif %}
+                  </li>
+                </ul>
+              {% endfor %}
+            </div>
           </div>
-          <div class="twp-mmc-menu_list_wrapper_2">
-            {% for link in block.settings.menu_links_8.links %}
-              <ul class="twp-mmc-menu_list">
-                <li class="twp-mmc-menu_item">
-                  <a href="{{ link.url }}">{{ link.title }}</a>
-                  {% if link.links.size > 0 %}
-                    <ul class="twp-mmc-submenu_list">
-                      {% for child_link in link.links %}
-                        <li class="twp-mm-submenu_item">
-                          <a href="{{ child_link.url }}">{{ child_link.title }}</a>
-                        </li>
-                      {% endfor %}
-                    </ul>
-                  {% endif %}
-                </li>
-              </ul>
-            {% endfor %}
-          </div>
-          <div class="twp-mmc-menu_list_wrapper_2">
-            {% for link in block.settings.menu_links_9.links %}
-              <ul class="twp-mmc-menu_list">
-                <li class="twp-mmc-menu_item">
-                  <a href="{{ link.url }}">{{ link.title }}</a>
-                  {% if link.links.size > 0 %}
-                    <ul class="twp-mmc-submenu_list">
-                      {% for child_link in link.links %}
-                        <li class="twp-mm-submenu_item">
-                          <a href="{{ child_link.url }}">{{ child_link.title }}</a>
-                        </li>
-                      {% endfor %}
-                    </ul>
-                  {% endif %}
-                </li>
-              </ul>
-            {% endfor %}
-          </div>
-        </div>
-        <div class="twp-mmc-image_wrapper">
-          <div class="twp-mmc-image">
-            <a
-              {% if block.settings.mmc_image_1_link %}
-                href="{{ block.settings.mmc_image_1_link }}"
+          <div class="twp-mmc-image_wrapper">
+            <div class="twp-mmc-image">
+              <a
+                {% if block.settings.mmc_image_1_link %}
+                  href="{{ block.settings.mmc_image_1_link }}"
+                {% endif %}
+              >
+                <img src="{{ block.settings.mmc_image_1 | img_url: 'master' }}" alt="">
+              </a>
+              {% if block.settings.mmc_image_1_text %}
+                <p>{{ block.settings.mmc_image_1_text }}</p>
               {% endif %}
-            >
-              <img src="{{ block.settings.mmc_image_1 | img_url: 'master' }}" alt="">
-            </a>
-            {% if block.settings.mmc_image_1_text %}
-              <p>{{ block.settings.mmc_image_1_text }}</p>
-            {% endif %}
-          </div>
-          <div class="twp-mmc-image">
-            <a
-              {% if block.settings.mmc_image_2_link %}
-                href="{{ block.settings.mmc_image_2_link }}"
+            </div>
+            <div class="twp-mmc-image">
+              <a
+                {% if block.settings.mmc_image_2_link %}
+                  href="{{ block.settings.mmc_image_2_link }}"
+                {% endif %}
+              >
+                <img src="{{ block.settings.mmc_image_2 | img_url: 'master' }}" alt="">
+              </a>
+              {% if block.settings.mmc_image_2_text %}
+                <p>{{ block.settings.mmc_image_2_text }}</p>
               {% endif %}
-            >
-              <img src="{{ block.settings.mmc_image_2 | img_url: 'master' }}" alt="">
-            </a>
-            {% if block.settings.mmc_image_2_text %}
-              <p>{{ block.settings.mmc_image_2_text }}</p>
-            {% endif %}
+            </div>
           </div>
-        </div>
-      {% endif %}
+        {% endif %}
 
-      {% if block.type == 'menu_list_3' %}
-        <div class="twp-mmc-link_wrapper_3">
-          <div class="twp-mmc-menu_list_wrapper_3">
-            {% for link in block.settings.menu_links_10.links %}
-              <ul class="twp-mmc-menu_list">
-                <li class="twp-mmc-menu_item">
-                  <a href="{{ link.url }}">{{ link.title }}</a>
-                  {% if link.links.size > 0 %}
-                    <ul class="twp-mmc-submenu_list">
-                      {% for child_link in link.links %}
-                        <li class="twp-mm-submenu_item">
-                          <a href="{{ child_link.url }}">{{ child_link.title }}</a>
-                        </li>
-                      {% endfor %}
-                    </ul>
-                  {% endif %}
-                </li>
-              </ul>
-            {% endfor %}
+        {% if block.type == 'menu_list_3' %}
+          <div class="twp-mmc-link_wrapper_3">
+            <div class="twp-mmc-menu_list_wrapper_3">
+              {% for link in block.settings.menu_links_10.links %}
+                <ul class="twp-mmc-menu_list">
+                  <li class="twp-mmc-menu_item">
+                    <a href="{{ link.url }}">{{ link.title }}</a>
+                    {% if link.links.size > 0 %}
+                      <ul class="twp-mmc-submenu_list">
+                        {% for child_link in link.links %}
+                          <li class="twp-mm-submenu_item">
+                            <a href="{{ child_link.url }}">{{ child_link.title }}</a>
+                          </li>
+                        {% endfor %}
+                      </ul>
+                    {% endif %}
+                  </li>
+                </ul>
+              {% endfor %}
+            </div>
+            <div class="twp-mmc-menu_list_wrapper_3">
+              {% for link in block.settings.menu_links_11.links %}
+                <ul class="twp-mmc-menu_list">
+                  <li class="twp-mmc-menu_item">
+                    <a href="{{ link.url }}">{{ link.title }}</a>
+                    {% if link.links.size > 0 %}
+                      <ul class="twp-mmc-submenu_list">
+                        {% for child_link in link.links %}
+                          <li class="twp-mm-submenu_item">
+                            <a href="{{ child_link.url }}">{{ child_link.title }}</a>
+                          </li>
+                        {% endfor %}
+                      </ul>
+                    {% endif %}
+                  </li>
+                </ul>
+              {% endfor %}
+            </div>
+            <div class="twp-mmc-menu_list_wrapper_3">
+              {% for link in block.settings.menu_links_12.links %}
+                <ul class="twp-mmc-menu_list">
+                  <li class="twp-mmc-menu_item">
+                    <a href="{{ link.url }}">{{ link.title }}</a>
+                    {% if link.links.size > 0 %}
+                      <ul class="twp-mmc-submenu_list">
+                        {% for child_link in link.links %}
+                          <li class="twp-mm-submenu_item">
+                            <a href="{{ child_link.url }}">{{ child_link.title }}</a>
+                          </li>
+                        {% endfor %}
+                      </ul>
+                    {% endif %}
+                  </li>
+                </ul>
+              {% endfor %}
+            </div>
+            <div class="twp-mmc-menu_list_wrapper_3">
+              {% for link in block.settings.menu_links_13.links %}
+                <ul class="twp-mmc-menu_list">
+                  <li class="twp-mmc-menu_item">
+                    <a href="{{ link.url }}">{{ link.title }}</a>
+                    {% if link.links.size > 0 %}
+                      <ul class="twp-mmc-submenu_list">
+                        {% for child_link in link.links %}
+                          <li class="twp-mm-submenu_item">
+                            <a href="{{ child_link.url }}">{{ child_link.title }}</a>
+                          </li>
+                        {% endfor %}
+                      </ul>
+                    {% endif %}
+                  </li>
+                </ul>
+              {% endfor %}
+            </div>
           </div>
-          <div class="twp-mmc-menu_list_wrapper_3">
-            {% for link in block.settings.menu_links_11.links %}
-              <ul class="twp-mmc-menu_list">
-                <li class="twp-mmc-menu_item">
-                  <a href="{{ link.url }}">{{ link.title }}</a>
-                  {% if link.links.size > 0 %}
-                    <ul class="twp-mmc-submenu_list">
-                      {% for child_link in link.links %}
-                        <li class="twp-mm-submenu_item">
-                          <a href="{{ child_link.url }}">{{ child_link.title }}</a>
-                        </li>
-                      {% endfor %}
-                    </ul>
-                  {% endif %}
-                </li>
-              </ul>
-            {% endfor %}
-          </div>
-          <div class="twp-mmc-menu_list_wrapper_3">
-            {% for link in block.settings.menu_links_12.links %}
-              <ul class="twp-mmc-menu_list">
-                <li class="twp-mmc-menu_item">
-                  <a href="{{ link.url }}">{{ link.title }}</a>
-                  {% if link.links.size > 0 %}
-                    <ul class="twp-mmc-submenu_list">
-                      {% for child_link in link.links %}
-                        <li class="twp-mm-submenu_item">
-                          <a href="{{ child_link.url }}">{{ child_link.title }}</a>
-                        </li>
-                      {% endfor %}
-                    </ul>
-                  {% endif %}
-                </li>
-              </ul>
-            {% endfor %}
-          </div>
-          <div class="twp-mmc-menu_list_wrapper_3">
-            {% for link in block.settings.menu_links_13.links %}
-              <ul class="twp-mmc-menu_list">
-                <li class="twp-mmc-menu_item">
-                  <a href="{{ link.url }}">{{ link.title }}</a>
-                  {% if link.links.size > 0 %}
-                    <ul class="twp-mmc-submenu_list">
-                      {% for child_link in link.links %}
-                        <li class="twp-mm-submenu_item">
-                          <a href="{{ child_link.url }}">{{ child_link.title }}</a>
-                        </li>
-                      {% endfor %}
-                    </ul>
-                  {% endif %}
-                </li>
-              </ul>
-            {% endfor %}
-          </div>
-        </div>
-        <div class="twp-mmc-image_wrapper_3">
-          <div class="twp-mmc-image_3">
-            <a
-              {% if block.settings.mmc_image_3_link %}
-                href="{{ block.settings.mmc_image_3_link }}"
+          <div class="twp-mmc-image_wrapper_3">
+            <div class="twp-mmc-image_3">
+              <a
+                {% if block.settings.mmc_image_3_link %}
+                  href="{{ block.settings.mmc_image_3_link }}"
+                {% endif %}
+              >
+                <img src="{{ block.settings.mmc_image_3 | img_url: 'master' }}" alt="">
+              </a>
+              {% if block.settings.mmc_image_3_text %}
+                <p>{{ block.settings.mmc_image_3_text }}</p>
               {% endif %}
-            >
-              <img src="{{ block.settings.mmc_image_3 | img_url: 'master' }}" alt="">
-            </a>
-            {% if block.settings.mmc_image_3_text %}
-              <p>{{ block.settings.mmc_image_3_text }}</p>
-            {% endif %}
+            </div>
           </div>
-        </div>
-      {% endif %}
+        {% endif %}
+      </div>
     </div>
-  </div>
+  {% endif %}
 {% endfor %}
 
 {% for block in section.blocks %}
   {% if block.type == 'menu_list_4' %}
-    <div class="twp-mega-menu-content_2">
+    <div class="twp-mega-menu-content twp-mmc-sm">
       <div class="twp-mmc-wrapper" data-mega-menu-name="{{ block.settings.attribute_name }}">
         <div class="twp-mmc-link_wrapper_4">
           <div class="twp-mmc-menu_list_wrapper_4">
@@ -359,7 +360,6 @@
         </div>
       </div>
     </div>
-
   {% endif %}
 {% endfor %}
 

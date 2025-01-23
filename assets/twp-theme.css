@@ -116,7 +116,7 @@
     z-index: 5;
     width: 100%;
 }
-.twp-mega-menu-content_2{
+.twp-mega-menu-content .twp-mmc-sm{
     display: flex;
     background-color: #fff;
     position: absolute;
@@ -124,6 +124,7 @@
     z-index: 5;
     width: 100%;
     max-width: 750px;
+    left: calc((100% - 750px) / 2);
 }
 
 .twp-mmc-wrapper{
