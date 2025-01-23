@@ -310,26 +310,28 @@
   {% if block.type == 'menu_list_4' %}
     <div class="twp-mega-menu-content_2">
       <div class="twp-mmc-wrapper" data-mega-menu-name="{{ block.settings.attribute_name }}">
-        <div class="twp-mmc-menu_list_wrapper_4">
-          {% for link in block.settings.menu_links_14.links %}
-            <ul class="twp-mmc-menu_list">
-              <li class="twp-mmc-menu_item">
-                <a href="{{ link.url }}">{{ link.title }}</a>
-                {% if link.links.size > 0 %}
-                  <ul class="twp-mmc-submenu_list">
-                    {% for child_link in link.links %}
-                      <li class="twp-mm-submenu_item">
-                        <a href="{{ child_link.url }}">{{ child_link.title }}</a>
-                      </li>
-                    {% endfor %}
-                  </ul>
-                {% endif %}
-              </li>
-            </ul>
-          {% endfor %}
+        <div class="twp-mmc-link_wrapper_4">
+          <div class="twp-mmc-menu_list_wrapper_4">
+            {% for link in block.settings.menu_links_14.links %}
+              <ul class="twp-mmc-menu_list">
+                <li class="twp-mmc-menu_item">
+                  <a href="{{ link.url }}">{{ link.title }}</a>
+                  {% if link.links.size > 0 %}
+                    <ul class="twp-mmc-submenu_list">
+                      {% for child_link in link.links %}
+                        <li class="twp-mm-submenu_item">
+                          <a href="{{ child_link.url }}">{{ child_link.title }}</a>
+                        </li>
+                      {% endfor %}
+                    </ul>
+                  {% endif %}
+                </li>
+              </ul>
+            {% endfor %}
+          </div>
         </div>
         <div class="twp-mmc-image_wrapper_4">
-          <div class="twp-mmc-image_4">
+          <div class="twp-mmc-image">
             <a
               {% if block.settings.mmc_image_4_link %}
                 href="{{ block.settings.mmc_image_4_link }}"
@@ -341,7 +343,7 @@
               <p>{{ block.settings.mmc_image_4_text }}</p>
             {% endif %}
           </div>
-          <div class="twp-mmc-image_5">
+          <div class="twp-mmc-image">
             <a
               {% if block.settings.mmc_image_5_link %}
                 href="{{ block.settings.mmc_image_5_link }}"
@@ -552,8 +554,8 @@
       ]
     },
     {
-      "type": "menu_list_3",
-      "name": "Menu [4 Links, 1 Image]",
+      "type": "menu_list_4",
+      "name": "Menu [1 Link, 2 Images]",
       "settings": [
         {
           "type": "text",
