@@ -232,6 +232,12 @@
             hoverElem.classList.remove('twp-active');
           }
         });
+        const mainContent = document.querySelector('#MainContent');
+        mainContent.addEventListener('mouseenter', () => {
+          if (megaMenuContent) {
+            hoverElem.classList.remove('twp-active');
+          }
+        });
       });
     });
   });

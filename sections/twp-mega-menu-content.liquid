@@ -403,6 +403,22 @@
   {% endif %}
 {% endfor %}
 
+<script>
+  {% comment %} Positioning the Mega Menu {% endcomment %}
+  document.addEventListener('DOMContentLoaded', function () {
+    const dataAttributeElems = document.querySelectorAll('.twp-mmc-sm_2 .twp-mmc-wrapper');
+    dataAttributeElems.forEach((elem) => {
+      const dataAttribute = elem.getAttribute('data-mega-menu-name');
+      const matchingElements = document.querySelectorAll(`.twp-mega_menu_item[data-mega-menu-name="${dataAttribute}"]`);
+      matchingElements.forEach((matchingElem) => {
+        const rect = matchingElem.getBoundingClientRect();
+        const positionFromLeft = rect.left - 250;
+        elem.closest('.twp-mega-menu-content.twp-mmc-sm_2').style.left = `${positionFromLeft}px`;
+      });
+    });
+  });
+</script>
+
 {% schema %}
 {
   "name": "Mega Menu Content",
