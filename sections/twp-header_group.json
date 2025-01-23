@@ -52,11 +52,11 @@
           "settings": {
             "attribute_name": "Men",
             "menu_links_1": "main-menu",
-            "menu_links_2": "main-menu",
+            "menu_links_2": "test",
             "menu_links_3": "main-menu",
-            "menu_links_4": "main-menu",
+            "menu_links_4": "test",
             "menu_links_5": "main-menu",
-            "menu_links_6": "main-menu"
+            "menu_links_6": "test"
           }
         },
         "menu_list_2_dyieBM": {
@@ -64,8 +64,8 @@
           "settings": {
             "attribute_name": "Women",
             "menu_links_7": "main-menu",
-            "menu_links_8": "main-menu",
-            "menu_links_9": "main-menu",
+            "menu_links_8": "test",
+            "menu_links_9": "footer",
             "mmc_image_1": "shopify://shop_images/fieldreport_vol2_back_c08e5a7a-d499-489a-8862-74a7d16c8a1c.jpg",
             "mmc_image_1_text": "Collection 1",
             "mmc_image_1_link": "#",
@@ -79,9 +79,9 @@
           "settings": {
             "attribute_name": "Children",
             "menu_links_10": "main-menu",
-            "menu_links_11": "main-menu",
+            "menu_links_11": "test",
             "menu_links_12": "main-menu",
-            "menu_links_13": "main-menu",
+            "menu_links_13": "test",
             "mmc_image_3": "shopify://shop_images/derbytier_moss_drawstring.jpg",
             "mmc_image_3_text": "Collection",
             "mmc_image_3_link": "#"
