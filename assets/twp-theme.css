@@ -166,7 +166,7 @@
     width: calc(100% / 3);
 }
 
-.twp-mmc-menu_list_wrapper_2{
+.twp-mmc-menu_list_wrapper_3{
     width: calc(100% / 4);
 }
 
@@ -177,10 +177,24 @@
     width: 50%;
 }
 
+.twp-mmc-image_3{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
 .twp-mmc-image img{
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
+}
+
+.twp-mmc-image_3 img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    max-height: 60vh;
 }
 
 .twp-mmc-image p{
@@ -201,7 +215,7 @@
 
 .twp-mmc-submenu_list{
     list-style: none;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 
 .twp-mm-submenu_item a{
