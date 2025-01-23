@@ -186,9 +186,9 @@
         </div>
         <div class="twp-mmc-image_wrapper">
           <div class="twp-mmc-image">
-            <a 
+            <a
               {% if block.settings.mmc_image_1_link %}
-              href="{{ block.settings.mmc_image_1_link }}"
+                href="{{ block.settings.mmc_image_1_link }}"
               {% endif %}
             >
               <img src="{{ block.settings.mmc_image_1 | img_url: 'master' }}" alt="">
@@ -198,9 +198,9 @@
             {% endif %}
           </div>
           <div class="twp-mmc-image">
-            <a 
+            <a
               {% if block.settings.mmc_image_2_link %}
-              href="{{ block.settings.mmc_image_2_link }}"
+                href="{{ block.settings.mmc_image_2_link }}"
               {% endif %}
             >
               <img src="{{ block.settings.mmc_image_2 | img_url: 'master' }}" alt="">
@@ -289,9 +289,9 @@
         </div>
         <div class="twp-mmc-image_wrapper_3">
           <div class="twp-mmc-image_3">
-            <a 
+            <a
               {% if block.settings.mmc_image_3_link %}
-              href="{{ block.settings.mmc_image_3_link }}"
+                href="{{ block.settings.mmc_image_3_link }}"
               {% endif %}
             >
               <img src="{{ block.settings.mmc_image_3 | img_url: 'master' }}" alt="">
@@ -302,10 +302,64 @@
           </div>
         </div>
       {% endif %}
-
     </div>
   </div>
 {% endfor %}
+
+{% for block in section.blocks %}
+  {% if block.type == 'menu_list_4' %}
+    <div class="twp-mega-menu-content_2">
+      <div class="twp-mmc-wrapper" data-mega-menu-name="{{ block.settings.attribute_name }}">
+        <div class="twp-mmc-menu_list_wrapper_4">
+          {% for link in block.settings.menu_links_14.links %}
+            <ul class="twp-mmc-menu_list">
+              <li class="twp-mmc-menu_item">
+                <a href="{{ link.url }}">{{ link.title }}</a>
+                {% if link.links.size > 0 %}
+                  <ul class="twp-mmc-submenu_list">
+                    {% for child_link in link.links %}
+                      <li class="twp-mm-submenu_item">
+                        <a href="{{ child_link.url }}">{{ child_link.title }}</a>
+                      </li>
+                    {% endfor %}
+                  </ul>
+                {% endif %}
+              </li>
+            </ul>
+          {% endfor %}
+        </div>
+        <div class="twp-mmc-image_wrapper_4">
+          <div class="twp-mmc-image_4">
+            <a
+              {% if block.settings.mmc_image_4_link %}
+                href="{{ block.settings.mmc_image_4_link }}"
+              {% endif %}
+            >
+              <img src="{{ block.settings.mmc_image_4 | img_url: 'master' }}" alt="">
+            </a>
+            {% if block.settings.mmc_image_4_text %}
+              <p>{{ block.settings.mmc_image_4_text }}</p>
+            {% endif %}
+          </div>
+          <div class="twp-mmc-image_5">
+            <a
+              {% if block.settings.mmc_image_5_link %}
+                href="{{ block.settings.mmc_image_5_link }}"
+              {% endif %}
+            >
+              <img src="{{ block.settings.mmc_image_5 | img_url: 'master' }}" alt="">
+            </a>
+            {% if block.settings.mmc_image_5_text %}
+              <p>{{ block.settings.mmc_image_5_text }}</p>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+
+  {% endif %}
+{% endfor %}
+
 {% schema %}
 {
   "name": "Mega Menu Content",
@@ -493,6 +547,60 @@
           "type": "url",
           "id": "mmc_image_3_link",
           "label": "Image Link",
+          "info": "Add a link to the image."
+        }
+      ]
+    },
+    {
+      "type": "menu_list_3",
+      "name": "Menu [4 Links, 1 Image]",
+      "settings": [
+        {
+          "type": "text",
+          "id": "attribute_name",
+          "label": "Mega Menu Item Name",
+          "info": "Enter the name of the Mega Menu item to be linked."
+        },
+        {
+          "type": "link_list",
+          "id": "menu_links_14",
+          "label": "Menu Links",
+          "info": "Add links to the Mega Menu."
+        },
+        {
+          "type": "image_picker",
+          "id": "mmc_image_4",
+          "label": "Image-1",
+          "info": "Add an image to the Mega Menu."
+        },
+        {
+          "type": "text",
+          "id": "mmc_image_4_text",
+          "label": "Image-1 Title",
+          "info": "Add a title to the image."
+        },
+        {
+          "type": "url",
+          "id": "mmc_image_4_link",
+          "label": "Image-1 Link",
+          "info": "Add a link to the image."
+        },
+        {
+          "type": "image_picker",
+          "id": "mmc_image_5",
+          "label": "Image-2",
+          "info": "Add an image to the Mega Menu."
+        },
+        {
+          "type": "text",
+          "id": "mmc_image_5_text",
+          "label": "Image-2 Title",
+          "info": "Add a title to the image."
+        },
+        {
+          "type": "url",
+          "id": "mmc_image_5_link",
+          "label": "Image-2 Link",
           "info": "Add a link to the image."
         }
       ]
