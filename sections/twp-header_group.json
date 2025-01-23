@@ -59,33 +59,25 @@
             "menu_links_6": "main-menu"
           }
         },
-        "menu_list_3c6WMD": {
-          "type": "menu_list",
+        "menu_list_2_dyieBM": {
+          "type": "menu_list_2",
           "settings": {
             "attribute_name": "Women",
-            "menu_links_1": "footer",
-            "menu_links_2": "footer",
-            "menu_links_3": "customer-account-main-menu",
-            "menu_links_4": "footer",
-            "menu_links_5": "footer",
-            "menu_links_6": "main-menu"
-          }
-        },
-        "image_iNxGkd": {
-          "type": "image",
-          "settings": {
-            "attribute_name_1": "Children",
-            "mmc_image": "shopify://shop_images/product_lifestyle-28.jpg",
-            "mmc_image_alt": "",
-            "mmc_image_title": "",
-            "mmc_image_url": ""
+            "menu_links_7": "main-menu",
+            "menu_links_8": "main-menu",
+            "menu_links_9": "main-menu",
+            "mmc_image_1": "shopify://shop_images/fieldreport_vol2_back_c08e5a7a-d499-489a-8862-74a7d16c8a1c.jpg",
+            "mmc_image_1_text": "Collection 1",
+            "mmc_image_1_link": "#",
+            "mmc_image_2": "shopify://shop_images/fieldreport_vol2_back_c08e5a7a-d499-489a-8862-74a7d16c8a1c.jpg",
+            "mmc_image_2_text": "",
+            "mmc_image_2_link": ""
           }
         }
       },
       "block_order": [
         "menu_list_yH7RYi",
-        "menu_list_3c6WMD",
-        "image_iNxGkd"
+        "menu_list_2_dyieBM"
       ],
       "settings": {
         "menu_width": "full-width"
