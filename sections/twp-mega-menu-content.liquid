@@ -333,7 +333,7 @@
           </div>
         </div>
         <div class="twp-mmc-image_wrapper_4">
-          <div class="twp-mmc-image">
+          <div class="twp-mmc-image_4">
             <a
               {% if block.settings.mmc_image_4_link %}
                 href="{{ block.settings.mmc_image_4_link }}"
@@ -345,7 +345,47 @@
               <p>{{ block.settings.mmc_image_4_text }}</p>
             {% endif %}
           </div>
-          <div class="twp-mmc-image">
+          <div class="twp-mmc-image_4">
+            <a
+              {% if block.settings.mmc_image_5_link %}
+                href="{{ block.settings.mmc_image_5_link }}"
+              {% endif %}
+            >
+              <img src="{{ block.settings.mmc_image_5 | img_url: 'master' }}" alt="">
+            </a>
+            {% if block.settings.mmc_image_5_text %}
+              <p>{{ block.settings.mmc_image_5_text }}</p>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+  {% if block.type == "menu_list_5" %}
+    <div class="twp-mega-menu-content twp-mmc-sm_2">
+      <div class="twp-mmc-wrapper" data-mega-menu-name="{{ block.settings.attribute_name }}">
+        <div class="twp-mmc-link_wrapper_5">
+          <div class="twp-mmc-menu_list_wrapper_5">
+            {% for link in block.settings.menu_links_15.links %}
+              <ul class="twp-mmc-menu_list">
+                <li class="twp-mmc-menu_item">
+                  <a href="{{ link.url }}">{{ link.title }}</a>
+                  {% if link.links.size > 0 %}
+                    <ul class="twp-mmc-submenu_list">
+                      {% for child_link in link.links %}
+                        <li class="twp-mm-submenu_item">
+                          <a href="{{ child_link.url }}">{{ child_link.title }}</a>
+                        </li>
+                      {% endfor %}
+                    </ul>
+                  {% endif %}
+                </li>
+              </ul>
+            {% endfor %}
+          </div>
+        </div>
+        <div class="twp-mmc-image_wrapper_5">
+          <div class="twp-mmc-image_3">
             <a
               {% if block.settings.mmc_image_5_link %}
                 href="{{ block.settings.mmc_image_5_link }}"
@@ -604,6 +644,42 @@
           "type": "url",
           "id": "mmc_image_5_link",
           "label": "Image-2 Link",
+          "info": "Add a link to the image."
+        }
+      ]
+    },
+    {
+      "type": "menu_list_5",
+      "name": "Menu [1 Link, 1 Image]",
+      "settings": [
+        {
+          "type": "text",
+          "id": "attribute_name",
+          "label": "Mega Menu Item Name",
+          "info": "Enter the name of the Mega Menu item to be linked."
+        },
+        {
+          "type": "link_list",
+          "id": "menu_links_15",
+          "label": "Menu Links",
+          "info": "Add links to the Mega Menu."
+        },
+        {
+          "type": "image_picker",
+          "id": "mmc_image_5",
+          "label": "Image",
+          "info": "Add an image to the Mega Menu."
+        },
+        {
+          "type": "text",
+          "id": "mmc_image_5_text",
+          "label": "Image Title",
+          "info": "Add a title to the image."
+        },
+        {
+          "type": "url",
+          "id": "mmc_image_5_link",
+          "label": "Image Link",
           "info": "Add a link to the image."
         }
       ]
