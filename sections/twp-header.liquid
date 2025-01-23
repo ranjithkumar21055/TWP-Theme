@@ -57,15 +57,17 @@
   <div class="twp-header_wrapper">
     <div class="page-width twp-header-menu_wrapper">
       {% if section.settings['twp-logo'] %}
-        <a href="{{ shop.url }}" class="twp-header_logo-link">
-          <img
-            src="{{ section.settings.twp-logo | img_url: 'master' }}"
-            alt="{{ shop.name }}"
-            width="{{ section.settings.twp-logo_width }}"
-            height="fit-content"
-            style="width:{{ section.settings.twp-logo_width }}px;"
-          >
-        </a>
+        <div class="twp-header_logo">
+          <a href="{{ shop.url }}" class="twp-header_logo-link">
+            <img
+              src="{{ section.settings.twp-logo | img_url: 'master' }}"
+              alt="{{ shop.name }}"
+              width="{{ section.settings.twp-logo_width }}"
+              height="fit-content"
+              style="width:{{ section.settings.twp-logo_width }}px;"
+            >
+          </a>
+        </div>
       {% else %}
         {% if section.settings['twp-header_text'] != blank %}
           <h1 class="twp-shop_name">{{ section.settings['twp-header_text'] }}</h1>
@@ -196,7 +198,7 @@
 </div>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener('DOMContentLoaded', function () {
     const megaMenuItem = document.querySelectorAll('.twp-mega_menu_item');
     megaMenuItem.forEach((item) => {
       var megaMenuName = item.dataset.megaMenuName;
@@ -210,39 +212,27 @@
           if (megaMenuContent) {
             megaMenuContent.classList.add('twp-active');
           }
-        });
-        hoverElem.addEventListener('mouseleave', () => {
-          hoverElem.classList.remove('twp-active');
-        });
-      });
-
-
-      {% comment %} item.addEventListener('mouseover', () => {
-        var megaMenuContent = document.querySelector(
-          `.twp-mmc-wrapper[data-mega-menu-name="${item.dataset.megaMenuName}"]`
-        );
-        if (megaMenuContent) {
-          megaMenuContent.style.display = 'flex';
-          item.classList.add('twp-active');
-          megaMenuContent.classList.add('twp-active');
-        }
-      });
-      item.addEventListener('mouseout', () => {
-        item.classList.remove('twp-active');
-        const activeItems = document.querySelectorAll('.twp-active');
-        activeItems.forEach((activeItem) => {
-          activeItem.addEventListener('mouseleave', () => {
-            activeItem.classList.remove('twp-active');
-            var megaMenuContent = document.querySelector(
-              `.twp-mmc-wrapper[data-mega-menu-name="${item.dataset.megaMenuName}"]`
-            );
-            if (megaMenuContent) {
-              
-              megaMenuContent.style.display = 'none';
+          megaMenuItem.forEach((otherItem) => {
+            if (otherItem !== item) {
+              var otherMegaMenuContent = document.querySelector(
+                `.twp-mmc-wrapper[data-mega-menu-name="${otherItem.dataset.megaMenuName}"]`
+              );
+              if (otherMegaMenuContent) {
+                otherMegaMenuContent.classList.remove('twp-active');
+              }
             }
           });
         });
-      }); {% endcomment %}
+        hoverElem.addEventListener('mouseleave', (event) => {
+          hoverElem.classList.remove('twp-active');
+        });
+        const headerWrapper = document.querySelector('.twp-header_wrapper');
+        headerWrapper.addEventListener('mouseenter', () => {
+          if (megaMenuContent) {
+            hoverElem.classList.remove('twp-active');
+          }
+        });
+      });
     });
   });
 </script>

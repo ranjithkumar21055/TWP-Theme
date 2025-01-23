@@ -38,9 +38,16 @@
     font-size: clamp(18px, 5vw, 32px);
 }
 
+.twp-header_logo{
+    width: 33.33%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .twp-header_logo-link{
     display: flex;
-    width: 33.33%;
+    width: fit-content;
 }
 
 /* Main Menu */
