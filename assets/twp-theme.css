@@ -197,7 +197,7 @@
     max-height: 60vh;
 }
 
-.twp-mmc-image p{
+.twp-mmc-image p, .twp-mmc-image_3 p{
     font-size: 16px;
     font-weight: 600;
 }
