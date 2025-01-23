@@ -144,12 +144,30 @@
     width: 55%;
 }
 
+.twp-mmc-link_wrapper_3{
+    display: flex;
+    flex-direction: row;
+    gap: 70px;
+    width: 70%;
+}
+
+.twp-mmc-image_wrapper_3{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    width: 30%;
+}
+
 .twp-mmc-menu_list_wrapper{
     width: calc(100% / 6);
 }
 
 .twp-mmc-menu_list_wrapper_2{
     width: calc(100% / 3);
+}
+
+.twp-mmc-menu_list_wrapper_2{
+    width: calc(100% / 4);
 }
 
 .twp-mmc-image{
