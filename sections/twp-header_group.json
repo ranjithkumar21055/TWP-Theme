@@ -73,11 +73,25 @@
             "mmc_image_2_text": "",
             "mmc_image_2_link": ""
           }
+        },
+        "menu_list_3_b7yVwi": {
+          "type": "menu_list_3",
+          "settings": {
+            "attribute_name": "Children",
+            "menu_links_10": "main-menu",
+            "menu_links_11": "main-menu",
+            "menu_links_12": "main-menu",
+            "menu_links_13": "main-menu",
+            "mmc_image_3": "shopify://shop_images/derbytier_moss_drawstring.jpg",
+            "mmc_image_3_text": "Collection",
+            "mmc_image_3_link": "#"
+          }
         }
       },
       "block_order": [
         "menu_list_yH7RYi",
-        "menu_list_2_dyieBM"
+        "menu_list_2_dyieBM",
+        "menu_list_3_b7yVwi"
       ],
       "settings": {
         "menu_width": "full-width"
