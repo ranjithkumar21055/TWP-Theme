@@ -86,12 +86,26 @@
             "mmc_image_3_text": "Collection",
             "mmc_image_3_link": "#"
           }
+        },
+        "menu_list_4_BAmEfJ": {
+          "type": "menu_list_4",
+          "settings": {
+            "attribute_name": "Electronics",
+            "menu_links_14": "test",
+            "mmc_image_4": "shopify://shop_images/fieldreport_vol2_front_437c4459-042c-4b07-8018-f092a5eb83ac.jpg",
+            "mmc_image_4_text": "Collection",
+            "mmc_image_4_link": "#",
+            "mmc_image_5": "shopify://shop_images/product_lifestyle-28.jpg",
+            "mmc_image_5_text": "Collection",
+            "mmc_image_5_link": "#"
+          }
         }
       },
       "block_order": [
         "menu_list_yH7RYi",
         "menu_list_2_dyieBM",
-        "menu_list_3_b7yVwi"
+        "menu_list_3_b7yVwi",
+        "menu_list_4_BAmEfJ"
       ],
       "settings": {
         "menu_width": "full-width"
