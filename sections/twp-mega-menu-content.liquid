@@ -14,7 +14,7 @@
 {% endstyle %}
 
 {% for block in section.blocks %}
-  {% if block.type == "menu_list" or block.type == "menu_list_2" or block.type == "menu_list_3" %}
+  {% if block.type == 'menu_list' or block.type == 'menu_list_2' or block.type == 'menu_list_3' %}
     <div class=" twp-mega-menu-content">
       <div class="twp-mmc-wrapper" data-mega-menu-name="{{ block.settings.attribute_name }}">
         {% if block.type == 'menu_list' %}
@@ -361,7 +361,7 @@
       </div>
     </div>
   {% endif %}
-  {% if block.type == "menu_list_5" %}
+  {% if block.type == 'menu_list_5' %}
     <div class="twp-mega-menu-content twp-mmc-sm_2 twp-mmc-center">
       <div class="twp-mmc-wrapper" data-mega-menu-name="{{ block.settings.attribute_name }}">
         <div class="twp-mmc-link_wrapper_5">
@@ -401,9 +401,9 @@
       </div>
     </div>
   {% endif %}
-  {% if block.type == "menu_list_6" %}
+  {% if block.type == 'menu_list_6' %}
     {% style %}
-      .twp-mmc-wrapper{
+      .twp-mmc-wrapper {
         padding: 20px 50px;
       }
     {% endstyle %}
@@ -415,15 +415,17 @@
               <ul class="twp-mmc-menu_list">
                 <li class="twp-mmc-menu_item">
                   <a href="{{ link.url }}">{{ link.title }}</a>
-                  {% comment %} {% if link.links.size > 0 %}
-                    <ul class="twp-mmc-submenu_list">
-                      {% for child_link in link.links %}
-                        <li class="twp-mm-submenu_item">
-                          <a href="{{ child_link.url }}">{{ child_link.title }}</a>
-                        </li>
-                      {% endfor %}
-                    </ul>
-                  {% endif %} {% endcomment %}
+                  {% comment %}
+                    {% if link.links.size > 0 %}
+                      <ul class="twp-mmc-submenu_list">
+                        {% for child_link in link.links %}
+                          <li class="twp-mm-submenu_item">
+                            <a href="{{ child_link.url }}">{{ child_link.title }}</a>
+                          </li>
+                        {% endfor %}
+                      </ul>
+                    {% endif %}
+                  {% endcomment %}
                 </li>
               </ul>
             {% endfor %}
