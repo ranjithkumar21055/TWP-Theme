@@ -109,6 +109,13 @@
             "mmc_image_5_text": "Collection",
             "mmc_image_5_link": "#"
           }
+        },
+        "menu_list_6_gCAkJX": {
+          "type": "menu_list_6",
+          "settings": {
+            "attribute_name": "Misc",
+            "menu_links_16": "test"
+          }
         }
       },
       "block_order": [
@@ -116,7 +123,8 @@
         "menu_list_2_dyieBM",
         "menu_list_3_b7yVwi",
         "menu_list_4_BAmEfJ",
-        "menu_list_5_bgrGHD"
+        "menu_list_5_bgrGHD",
+        "menu_list_6_gCAkJX"
       ],
       "settings": {
         "menu_width": "full-width"
