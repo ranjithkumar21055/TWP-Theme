@@ -72,6 +72,39 @@
 /* Mobile Menu */
 .twp-mobile_menu{
     display: none;
+    position: relative;
+}
+
+.twp-icon_wrapper{
+    display: flex;
+}
+
+.twp-mobile_menu_dropdown{
+    position: absolute;
+    background-color: #fff;
+    top: calc(100% + 22px);
+    width: 100vw;
+    z-index: 5;
+    right: 100vw;
+    transition: 0.5s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.twp-mm-active .twp-mobile_menu_dropdown {
+    right: -15px;
+}
+
+.twp-mm-active .menu-open{
+    display: none;
+}
+
+.menu-close {
+    display: none;
+}
+
+.twp-mm-active .menu-close{
+    display: block;
 }
 
 /* Header icons */

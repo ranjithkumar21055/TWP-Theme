@@ -171,7 +171,17 @@
 
       <div class="twp-mobile_menu">
         <div class="twp-icon_wrapper">
-          <span class="svg-wrapper">{{ 'icon-hamburger.svg' | inline_asset_content }}</span>
+          <span class="svg-wrapper menu-open">{{ 'icon-hamburger.svg' | inline_asset_content }}</span>
+          <span class="svg-wrapper menu-close">{{ 'icon-close.svg' | inline_asset_content }}</span>
+        </div>
+        <div class="twp-mobile_menu_dropdown">
+          <ul class="twp-main_menu">
+            {% for link in section.settings.mobile_menu.links %}
+              <li class="twp-nav_item">
+                <a href="{{ link.url }}">{{ link.title }}</a>
+              </li>
+            {% endfor %}
+          </ul>
         </div>
       </div>
     </div>
@@ -198,6 +208,7 @@
 </div>
 
 <script>
+  {% comment %} Mega menu - Display conditions {% endcomment %}
   document.addEventListener('DOMContentLoaded', function () {
     const megaMenuItem = document.querySelectorAll('.twp-mega_menu_item');
     megaMenuItem.forEach((item) => {
@@ -240,6 +251,20 @@
         });
       });
     });
+  });
+
+  {% comment %} Mobile Menu {% endcomment %}
+  const headerHeight = document.querySelector('.twp-header').offsetHeight;
+  const mobileDropdown = document.querySelector('.twp-mobile_menu_dropdown');
+  mobileDropdown.style.height = `calc(100vh - ${headerHeight}px)`;
+  const mobileMenu = document.querySelector('.twp-mobile_menu');
+  const menuOpen = document.querySelector('.menu-open');
+  const menuClose = document.querySelector('.menu-close');
+  menuOpen.addEventListener('click', ()=> {
+    mobileMenu.classList.add('twp-mm-active');
+  });
+  menuClose.addEventListener('click', ()=> {
+    mobileMenu.classList.remove('twp-mm-active');
   });
 </script>
 
@@ -301,6 +326,11 @@
       "type": "link_list",
       "id": "menu",
       "label": "Menu"
+    },
+    {
+      "type": "link_list",
+      "id": "mobile_menu",
+      "label": "Mobile Menu"
     }
   ],
   "blocks": [
