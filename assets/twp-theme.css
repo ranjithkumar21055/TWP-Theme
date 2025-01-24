@@ -322,7 +322,20 @@
     .twp-desktop_menu{
         display: none;
     }
+
+    .twp-mega_menu{
+        display: none;
+    }
+
+    .twp-mega-menu-content{
+        display: none;
+    }
+
     .twp-mobile_menu{
         display: flex;
+    }
+
+    .twp-header-menu_wrapper{
+        justify-content: space-between;
     }
 }

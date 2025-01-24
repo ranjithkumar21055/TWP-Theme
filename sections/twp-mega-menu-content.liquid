@@ -362,7 +362,7 @@
     </div>
   {% endif %}
   {% if block.type == "menu_list_5" %}
-    <div class="twp-mega-menu-content twp-mmc-sm_2">
+    <div class="twp-mega-menu-content twp-mmc-sm_2 twp-mmc-center">
       <div class="twp-mmc-wrapper" data-mega-menu-name="{{ block.settings.attribute_name }}">
         <div class="twp-mmc-link_wrapper_5">
           <div class="twp-mmc-menu_list_wrapper_5">
@@ -407,7 +407,7 @@
         padding: 20px 50px;
       }
     {% endstyle %}
-    <div class="twp-mega-menu-content twp-mmc-sm_3">
+    <div class="twp-mega-menu-content twp-mmc-sm_3 twp-mmc-center">
       <div class="twp-mmc-wrapper" data-mega-menu-name="{{ block.settings.attribute_name }}">
         <div class="twp-mmc-link_wrapper_6">
           <div class="twp-mmc-menu_list_wrapper_6">
@@ -437,14 +437,17 @@
 <script>
   {% comment %} Positioning the Mega Menu {% endcomment %}
   document.addEventListener('DOMContentLoaded', function () {
-    const dataAttributeElems = document.querySelectorAll('.twp-mmc-sm_2 .twp-mmc-wrapper');
+    const dataAttributeElems = document.querySelectorAll('.twp-mmc-center .twp-mmc-wrapper');
     dataAttributeElems.forEach((elem) => {
       const dataAttribute = elem.getAttribute('data-mega-menu-name');
       const matchingElements = document.querySelectorAll(`.twp-mega_menu_item[data-mega-menu-name="${dataAttribute}"]`);
       matchingElements.forEach((matchingElem) => {
         const rect = matchingElem.getBoundingClientRect();
-        const positionFromLeft = rect.left - 250;
-        elem.closest('.twp-mega-menu-content.twp-mmc-sm_2').style.left = `${positionFromLeft}px`;
+        matchingElem.addEventListener('mouseover', () => {
+          const elemWidth = elem.offsetWidth / 2;
+          const positionFromLeft = rect.left - elemWidth;
+          elem.closest('.twp-mega-menu-content.twp-mmc-center').style.left = `${positionFromLeft}px`;
+        });
       });
     });
   });
