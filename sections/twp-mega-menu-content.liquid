@@ -401,6 +401,32 @@
       </div>
     </div>
   {% endif %}
+  {% if block.type == "menu_list_6" %}
+    <div class="twp-mega-menu-content twp-mmc-sm_3">
+      <div class="twp-mmc-wrapper" data-mega-menu-name="{{ block.settings.attribute_name }}">
+        <div class="twp-mmc-link_wrapper_6">
+          <div class="twp-mmc-menu_list_wrapper_6">
+            {% for link in block.settings.menu_links_16.links %}
+              <ul class="twp-mmc-menu_list">
+                <li class="twp-mmc-menu_item">
+                  <a href="{{ link.url }}">{{ link.title }}</a>
+                  {% comment %} {% if link.links.size > 0 %}
+                    <ul class="twp-mmc-submenu_list">
+                      {% for child_link in link.links %}
+                        <li class="twp-mm-submenu_item">
+                          <a href="{{ child_link.url }}">{{ child_link.title }}</a>
+                        </li>
+                      {% endfor %}
+                    </ul>
+                  {% endif %} {% endcomment %}
+                </li>
+              </ul>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
 {% endfor %}
 
 <script>
@@ -697,6 +723,24 @@
           "id": "mmc_image_5_link",
           "label": "Image Link",
           "info": "Add a link to the image."
+        }
+      ]
+    },
+    {
+      "type": "menu_list_6",
+      "name": "Dropdown Menu",
+      "settings": [
+        {
+          "type": "text",
+          "id": "attribute_name",
+          "label": "Mega Menu Item Name",
+          "info": "Enter the name of the Mega Menu item to be linked."
+        },
+        {
+          "type": "link_list",
+          "id": "menu_links_16",
+          "label": "Menu Link",
+          "info": "Add links to the Mega Menu."
         }
       ]
     }
