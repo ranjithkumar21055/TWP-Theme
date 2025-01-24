@@ -178,7 +178,22 @@
           <ul class="twp-main_menu">
             {% for link in section.settings.mobile_menu.links %}
               <li class="twp-nav_item">
-                <a href="{{ link.url }}">{{ link.title }}</a>
+                <div class="nav-item_wrapper">
+                  <a href="{{ link.url }}">{{ link.title }}</a>
+                  {% if link.links.size > 0 %}
+                    <span class="nav-item-dropdown-open">{{ 'icon-plus.svg' | inline_asset_content }}</span>
+                    <span class="nav-item-dropdown-close">{{ 'icon-minus.svg' | inline_asset_content }}</span>
+                  {% endif %}
+                </div>
+                {% if link.links.size > 0 %}
+                  <ul class="twp-mega_menu_list">
+                    {% for child_link in link.links %}
+                      <li class="twp-mega_menu_item" data-mega-menu-name="{{ child_link.title }}">
+                        <a href="{{ child_link.url }}">{{ child_link.title }}</a>
+                      </li>
+                    {% endfor %}
+                  </ul>
+                {% endif %}
               </li>
             {% endfor %}
           </ul>
@@ -251,7 +266,6 @@
         });
       });
     });
-  });
 
   {% comment %} Mobile Menu {% endcomment %}
   const headerHeight = document.querySelector('.twp-header').offsetHeight;
@@ -266,6 +280,24 @@
   menuClose.addEventListener('click', ()=> {
     mobileMenu.classList.remove('twp-mm-active');
   });
+
+  const mobileNavItems = document.querySelectorAll('.twp-mobile_menu_dropdown .twp-nav_item');
+  mobileNavItems.forEach((navItem) => {
+   const subMenuOpen = navItem.querySelector('.nav-item-dropdown-open');
+   const subMenuClose = navItem.querySelector('.nav-item-dropdown-close');
+   if(subMenuOpen){
+    subMenuOpen.addEventListener('click', () => {
+      navItem.classList.add('twp-msm-active');
+     });
+   }
+   if(subMenuClose){
+    subMenuClose.addEventListener('click', () => {
+      navItem.classList.remove('twp-msm-active');
+     });
+   }
+  });
+
+});
 </script>
 
 {% schema %}
