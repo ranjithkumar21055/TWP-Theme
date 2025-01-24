@@ -41,7 +41,8 @@
         "twp-header_text": "",
         "background": "#000000",
         "svg-fill": "#ffffff",
-        "menu": "main-menu"
+        "menu": "main-menu",
+        "mobile_menu": "main-menu"
       }
     },
     "twp-mega-menu-content": {
