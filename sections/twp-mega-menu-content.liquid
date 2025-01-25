@@ -32,6 +32,27 @@
     color: {{ section.settings.mmc_text_color }};
   }
 
+  .twp-mmc-menu_item a{
+    color: {{ section.settings.mmc_text_color }};
+  }
+
+  .twp-mobile_menu_dropdown .twp-nav_item a{
+    color: {{ section.settings.mmc_text_color }};
+  }
+
+  .twp-mobile_menu_dropdown .twp-nav_item:not(:last-child) {
+    border-bottom: 1px solid {{ section.settings.mmc_text_color }};
+  }
+
+  .twp-mobile_menu_dropdown{
+    background-color: {{ section.settings.mmc_bg_color }};
+  }
+
+  .nav-item-dropdown-open svg , .nav-item-dropdown-close svg {
+    fill: {{ section.settings.mmc_text_color }};
+  }
+  .nav-item-dropdown-close svg 
+
 {% endstyle %}
 
 {% for block in section.blocks %}

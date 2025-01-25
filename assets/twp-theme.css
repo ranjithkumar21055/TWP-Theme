@@ -81,7 +81,6 @@
 
 .twp-mobile_menu_dropdown{
     position: absolute;
-    background-color: #fff;
     top: calc(100% + 22px);
     width: 100vw;
     z-index: 5;
@@ -126,10 +125,6 @@
     justify-content: space-between;
 }
 
-.twp-mobile_menu_dropdown .twp-nav_item:not(:last-child) {
-    border-bottom: 1px solid #eeeeee;
-}
-
 .nav-item-dropdown-close{
     display: none !important;
 }
@@ -145,10 +140,6 @@
 .nav-item-dropdown-open, .nav-item-dropdown-close {
     display: flex;
     width: 15px;
-}
-
-.twp-mobile_menu_dropdown .twp-nav_item a{
-    color: black;
 }
 
 .twp-mobile_menu_dropdown .twp-mega_menu_list{
