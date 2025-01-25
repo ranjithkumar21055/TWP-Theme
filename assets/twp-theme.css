@@ -205,7 +205,6 @@
 /* Mega Menu Content */
 .twp-mega-menu-content{
     display: flex;
-    background-color: #fff;
     position: absolute;
     top: 69px;
     z-index: 5;
@@ -213,7 +212,6 @@
 }
 .twp-mega-menu-content .twp-mmc-sm{
     display: flex;
-    background-color: #fff;
     position: absolute;
     top: 69px;
     z-index: 5;
@@ -224,7 +222,6 @@
 
 .twp-mega-menu-content .twp-mmc-sm_2{
     display: flex;
-    background-color: #fff;
     position: absolute;
     top: 69px;
     z-index: 5;
@@ -234,7 +231,6 @@
 
 .twp-mega-menu-content .twp-mmc-sm_3{
     display: flex;
-    background-color: #fff;
     position: absolute;
     top: 69px;
     z-index: 5;
@@ -389,14 +385,12 @@
 .twp-mmc-menu_item a{
     text-decoration: none;
     font-weight: 600;
-    color:black;
     font-size: 16px;
 }
 
 .twp-mmc-menu_list_wrapper_6 .twp-mmc-menu_item a{
     text-decoration: none;
     font-weight: 400;
-    color:black;
     font-size: 16px;
 }
 
@@ -408,7 +402,6 @@
 .twp-mm-submenu_item a{
     text-decoration: none;
     font-weight: 400;
-    color:black;
     font-size: 16px;
     
 }

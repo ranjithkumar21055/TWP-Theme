@@ -11,6 +11,27 @@
       left: calc((100% - 1280px) / 2);
     }
   {% endif %}
+
+  .twp-mega-menu-content {
+    background-color: {{ section.settings.mmc_bg_color }};
+    color: {{ section.settings.mmc_text_color }};
+  }
+
+  .twp-mega-menu-content .twp-mmc-sm {
+    background-color: {{ section.settings.mmc_bg_color }};
+    color: {{ section.settings.mmc_text_color }};
+  }
+
+  .twp-mega-menu-content .twp-mmc-sm_2 {
+    background-color: {{ section.settings.mmc_bg_color }};
+    color: {{ section.settings.mmc_text_color }};
+  }
+
+  .twp-mega-menu-content .twp-mmc-sm_3 {
+    background-color: {{ section.settings.mmc_bg_color }};
+    color: {{ section.settings.mmc_text_color }};
+  }
+
 {% endstyle %}
 
 {% for block in section.blocks %}
