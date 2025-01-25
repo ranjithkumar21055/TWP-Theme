@@ -240,13 +240,9 @@
     {% endif %}
   {% endfor %}
 </div>
-<script src="lib/bodyScrollLock.js" defer></script>
+
 <script>
-
-  const bodyScrollLock = require('body-scroll-lock');
-  const disableBodyScroll = bodyScrollLock.disableBodyScroll;
-  const enableBodyScroll = bodyScrollLock.enableBodyScroll;
-
+  
   {% comment %} Mega menu - Display conditions {% endcomment %}
    
   document.addEventListener('DOMContentLoaded', function () {
@@ -303,11 +299,9 @@
   const menuClose = document.querySelector('.menu-close');
   menuOpen.addEventListener('click', ()=> {
     mobileMenu.classList.add('twp-mm-active');
-    disableBodyScroll(mobileDropdown);
   });
   menuClose.addEventListener('click', ()=> {
     mobileMenu.classList.remove('twp-mm-active');
-    enableBodyScroll(mobileDropdown);
   });
 
   const mobileNavItems = document.querySelectorAll('.twp-mobile_menu_dropdown .twp-nav_item');
