@@ -264,7 +264,7 @@
             hoverElem.classList.remove('twp-active');
           }
         });
-        
+
       });
     });
 
@@ -287,9 +287,16 @@
   mobileNavItems.forEach((navItem) => {
    const subMenuOpen = navItem.querySelector('.nav-item-dropdown-open');
    const subMenuClose = navItem.querySelector('.nav-item-dropdown-close');
+   const subMenuAll = document.querySelectorAll('.nav-item-dropdown-open');
    if(subMenuOpen){
     subMenuOpen.addEventListener('click', () => {
       navItem.classList.add('twp-msm-active');
+      subMenuAll.forEach((menu) => {
+        console.log(menu);
+        if(menu !== subMenuOpen){
+          menu.closest('.twp-nav_item').classList.remove('twp-msm-active');
+        }
+      });
      });
    }
    if(subMenuClose){
