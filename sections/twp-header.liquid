@@ -232,40 +232,42 @@
         `.twp-mmc-wrapper[data-mega-menu-name="${item.dataset.megaMenuName}"]`
       );
       var hoverElems = document.querySelectorAll(`[data-mega-menu-name="${megaMenuName}"]`);
+      const megaMenuWrapper = document.querySelectorAll('.twp-mmc-wrapper');
       hoverElems.forEach((hoverElem) => {
-        hoverElem.addEventListener('mouseover', () => {
+        hoverElem.addEventListener('mouseover', (event) => {
           hoverElem.classList.add('twp-active');
           if (megaMenuContent) {
-            megaMenuContent.classList.add('twp-active');
+           megaMenuContent.classList.add('twp-active');
           }
-          megaMenuItem.forEach((otherItem) => {
-            if (otherItem !== item) {
-              var otherMegaMenuContent = document.querySelector(
-                `.twp-mmc-wrapper[data-mega-menu-name="${otherItem.dataset.megaMenuName}"]`
-              );
-              if (otherMegaMenuContent) {
-                otherMegaMenuContent.classList.remove('twp-active');
-              }
+
+          megaMenuWrapper.forEach((wrapper) => {
+            if (wrapper !== megaMenuContent) {
+              wrapper.classList.remove('twp-active');
             }
           });
         });
+
         hoverElem.addEventListener('mouseleave', (event) => {
-          hoverElem.classList.remove('twp-active');
+            hoverElem.classList.remove('twp-active');
         });
+
         const headerWrapper = document.querySelector('.twp-header_wrapper');
         headerWrapper.addEventListener('mouseenter', () => {
           if (megaMenuContent) {
             hoverElem.classList.remove('twp-active');
           }
         });
+
         const mainContent = document.querySelector('#MainContent');
         mainContent.addEventListener('mouseenter', () => {
           if (megaMenuContent) {
             hoverElem.classList.remove('twp-active');
           }
         });
+        
       });
     });
+
 
   {% comment %} Mobile Menu {% endcomment %}
   const headerHeight = document.querySelector('.twp-header').offsetHeight;
