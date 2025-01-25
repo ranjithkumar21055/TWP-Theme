@@ -189,7 +189,22 @@
                   <ul class="twp-mega_menu_list">
                     {% for child_link in link.links %}
                       <li class="twp-mega_menu_item" data-mega-menu-name="{{ child_link.title }}">
-                        <a href="{{ child_link.url }}">{{ child_link.title }}</a>
+                        <div class="nav-item_child_wrapper">
+                          <a href="{{ child_link.url }}">{{ child_link.title }}</a>
+                          {% if child_link.links.size > 0 %}
+                            <span class="nav-item-dropdown-open">{{ 'icon-plus.svg' | inline_asset_content }}</span>
+                            <span class="nav-item-dropdown-close">{{ 'icon-minus.svg' | inline_asset_content }}</span>
+                          {% endif %}
+                        </div>
+                        {% if child_link.links.size > 0 %}
+                          <ul class="twp-child_menu_list">
+                            {% for sub_child_link in child_link.links %}
+                              <li class="twp-child_menu_item" data-mega-menu-name="{{ sub_child_link.title }}">
+                                <a href="{{ sub_child_link.url }}">{{ sub_child_link.title }}</a>
+                              </li>
+                            {% endfor %}
+                          </ul>
+                        {% endif %}
                       </li>
                     {% endfor %}
                   </ul>
