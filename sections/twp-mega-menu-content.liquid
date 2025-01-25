@@ -51,6 +51,17 @@
     opacity: 0.3;
   }
 
+  .twp-child_menu_item:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: {{ section.settings.mmc_text_color }};
+    width: 100%;
+    height: 0.1px;
+    opacity: 0.3;
+  }
+
   .twp-mobile_menu_dropdown{
     background-color: {{ section.settings.mmc_bg_color }};
   }

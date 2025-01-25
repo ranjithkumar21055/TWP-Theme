@@ -192,9 +192,16 @@
     width: 100%;
 }
 
+.twp-child_menu_item{
+    width: 100%;
+    position: relative;
+    padding: 5px 0px 5px 5px;
+}
+
+
 .twp-msm-active .twp-mega_menu_list{
     height: fit-content;
-    padding: 10px 0px 0px 5px;
+    padding: 10px 0px 0px 0px;
 }
 
 .twp-mcm-active .twp-child_menu_list{

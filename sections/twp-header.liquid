@@ -188,7 +188,7 @@
                 {% if link.links.size > 0 %}
                   <ul class="twp-mega_menu_list">
                     {% for child_link in link.links %}
-                      <li class="twp-mega_menu_item" data-mega-menu-name="{{ child_link.title }}">
+                      <li class="twp-child_menu_item" data-mega-menu-name="{{ child_link.title }}">
                         <div class="nav-item_child_wrapper">
                           <a href="{{ child_link.url }}">{{ child_link.title }}</a>
                           {% if child_link.links.size > 0 %}
@@ -327,17 +327,17 @@
 
 
 
-const mobileChildItems = document.querySelectorAll('.nav-item_child_wrapper');
+const mobileChildItems = document.querySelectorAll('.twp-child_menu_item');
 mobileChildItems.forEach((childItem) => {
  const childMenuOpen = childItem.querySelector('.nav-item-child-dropdown-open');
  const childMenuClose = childItem.querySelector('.nav-item-child-dropdown-close');
  const childMenuAll = document.querySelectorAll('.nav-item-child-dropdown-open');
  if(childMenuOpen){
-  childOpen.addEventListener('click', () => {
+  childMenuOpen.addEventListener('click', () => {
     childItem.classList.add('twp-mcm-active');
     childMenuAll.forEach((childMenu) => {
       if(childMenu !== childMenuOpen){
-        childMenu.closest('.nav-item_child_wrapper').classList.remove('twp-mcm-active');
+        childMenu.closest('.twp-child_menu_item').classList.remove('twp-mcm-active');
       }
     });
    });
