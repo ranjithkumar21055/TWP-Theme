@@ -116,7 +116,8 @@
 
 .twp-mobile_menu_dropdown .twp-nav_item{
     width: 100%;
-    padding: 10px 20px 10px 0px;
+    padding: 10px 20px 10px 5px;
+    position: relative;
 }
 
 .nav-item_wrapper {
@@ -146,7 +147,6 @@
     flex-direction: column;
     gap: 5px;
     align-items: start;
-    padding: 10px 0px 0px 5px;
     height: 0px;
     overflow: hidden;
 }
@@ -157,6 +157,7 @@
 
 .twp-msm-active .twp-mega_menu_list{
     height: fit-content;
+    padding: 10px 0px 0px 5px;
 }
 
 
