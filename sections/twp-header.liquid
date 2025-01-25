@@ -192,8 +192,12 @@
                         <div class="nav-item_child_wrapper">
                           <a href="{{ child_link.url }}">{{ child_link.title }}</a>
                           {% if child_link.links.size > 0 %}
-                            <span class="nav-item-dropdown-open">{{ 'icon-plus.svg' | inline_asset_content }}</span>
-                            <span class="nav-item-dropdown-close">{{ 'icon-minus.svg' | inline_asset_content }}</span>
+                            <span class="nav-item-child-dropdown-open">
+                              {{- 'icon-plus.svg' | inline_asset_content -}}
+                            </span>
+                            <span class="nav-item-child-dropdown-close">
+                              {{- 'icon-minus.svg' | inline_asset_content -}}
+                            </span>
                           {% endif %}
                         </div>
                         {% if child_link.links.size > 0 %}
@@ -239,6 +243,7 @@
 
 <script>
   {% comment %} Mega menu - Display conditions {% endcomment %}
+   
   document.addEventListener('DOMContentLoaded', function () {
     const megaMenuItem = document.querySelectorAll('.twp-mega_menu_item');
     megaMenuItem.forEach((item) => {
@@ -284,7 +289,7 @@
     });
 
 
-  {% comment %} Mobile Menu {% endcomment %}
+
   const headerHeight = document.querySelector('.twp-header').offsetHeight;
   const mobileDropdown = document.querySelector('.twp-mobile_menu_dropdown');
   mobileDropdown.style.height = `calc(100vh - ${headerHeight}px)`;
@@ -307,7 +312,6 @@
     subMenuOpen.addEventListener('click', () => {
       navItem.classList.add('twp-msm-active');
       subMenuAll.forEach((menu) => {
-        console.log(menu);
         if(menu !== subMenuOpen){
           menu.closest('.twp-nav_item').classList.remove('twp-msm-active');
         }
@@ -320,6 +324,30 @@
      });
    }
   });
+
+
+
+const mobileChildItems = document.querySelectorAll('.nav-item_child_wrapper');
+mobileChildItems.forEach((childItem) => {
+ const childMenuOpen = childItem.querySelector('.nav-item-child-dropdown-open');
+ const childMenuClose = childItem.querySelector('.nav-item-child-dropdown-close');
+ const childMenuAll = document.querySelectorAll('.nav-item-child-dropdown-open');
+ if(childMenuOpen){
+  childOpen.addEventListener('click', () => {
+    childItem.classList.add('twp-mcm-active');
+    childMenuAll.forEach((childMenu) => {
+      if(childMenu !== childMenuOpen){
+        childMenu.closest('.nav-item_child_wrapper').classList.remove('twp-mcm-active');
+      }
+    });
+   });
+ }
+ if(childMenuClose){
+  childMenuClose.addEventListener('click', () => {
+    childItem.classList.remove('twp-mcm-active');
+   });
+ }
+});
 
 });
 </script>
