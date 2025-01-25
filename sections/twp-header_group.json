@@ -128,7 +128,9 @@
         "menu_list_6_gCAkJX"
       ],
       "settings": {
-        "menu_width": "full-width"
+        "menu_width": "full-width",
+        "mmc_bg_color": "#121212",
+        "mmc_text_color": "#ffffff"
       }
     }
   },
