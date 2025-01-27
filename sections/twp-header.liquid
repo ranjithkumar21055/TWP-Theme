@@ -47,6 +47,15 @@
       justify-content: start;
     }
   {% endif %}
+
+  .svg-wrapper svg path {
+    fill: {{ section.settings.svg-fill }};
+  }
+
+  .twp-mobile_icon .svg-wrapper {
+    width: 30px;  
+    height: 30px;
+  }
 {% endstyle %}
 <div class="twp-header">
   {% for block in section.blocks %}
@@ -181,7 +190,9 @@
         <div class="twp-mobile_menu_dropdown">
           <div class="twp-mobile_icon_wrapper">
             <div class="twp-mobile_icon">
-              <span class="svg-wrapper">{{ 'icon-home.svg' | inline_asset_content }}</span>
+              <span class="svg-wrapper">{{ 'icon-account.svg' | inline_asset_content }}</span>
+              <span class="svg-wrapper">{{ 'icon-eye.svg' | inline_asset_content }}</span>
+              <span class="svg-wrapper">{{ 'icon-nut-free.svg' | inline_asset_content }}</span>
             </div>
           <ul class="twp-main_menu">
             {% for link in section.settings.mobile_menu.links %}
@@ -280,7 +291,7 @@
             hoverElem.classList.remove('twp-active');
         });
 
-        const headerWrapper = document.querySelector('.twp-header_wrapper');
+        const headerWrapper = document.querySelector('.twp-header-menu_wrapper');
         headerWrapper.addEventListener('mouseenter', () => {
           if (megaMenuContent) {
             hoverElem.classList.remove('twp-active');
