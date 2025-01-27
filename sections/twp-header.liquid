@@ -7,6 +7,10 @@
       }
     {% endif %}
   {% endfor %}
+
+  body.no-scroll {
+    overflow: hidden;
+  }
   .twp-header_wrapper {
     background-color: {{ section.settings.background }};
   }
@@ -293,7 +297,7 @@
 
   const headerHeight = document.querySelector('.twp-header').offsetHeight;
   const mobileDropdown = document.querySelector('.twp-mobile_menu_dropdown');
-  mobileDropdown.style.height = `calc(100vh - ${headerHeight}px)`;
+  mobileDropdown.style.height = `calc(100vh - ${headerHeight}px + 5px)`;
   const mobileMenu = document.querySelector('.twp-mobile_menu');
   const menuOpen = document.querySelector('.menu-open');
   const menuClose = document.querySelector('.menu-close');
@@ -303,6 +307,19 @@
   menuClose.addEventListener('click', ()=> {
     mobileMenu.classList.remove('twp-mm-active');
   });
+
+  function disableBodyScroll() {
+    document.body.classList.add('no-scroll');
+  }
+
+  function enableBodyScroll() {
+    document.body.classList.remove('no-scroll');
+  }
+
+  const targetElement = document.querySelector('.twp-header');
+  
+  targetElement.addEventListener('mouseenter', disableBodyScroll);
+  targetElement.addEventListener('mouseleave', enableBodyScroll);
 
   const mobileNavItems = document.querySelectorAll('.twp-mobile_menu_dropdown .twp-nav_item');
   mobileNavItems.forEach((navItem) => {

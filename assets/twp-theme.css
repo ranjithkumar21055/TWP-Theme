@@ -90,6 +90,7 @@
     flex-direction: column;
     padding: 20px 15px;
     -webkit-overflow-scrolling: touch;
+    overflow-y: scroll;
 }
 
 .twp-mm-active .twp-mobile_menu_dropdown {
