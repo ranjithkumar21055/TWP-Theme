@@ -179,6 +179,10 @@
           <span class="svg-wrapper menu-close">{{ 'icon-close.svg' | inline_asset_content }}</span>
         </div>
         <div class="twp-mobile_menu_dropdown">
+          <div class="twp-mobile_icon_wrapper">
+            <div class="twp-mobile_icon">
+              <span class="svg-wrapper">{{ 'icon-home.svg' | inline_asset_content }}</span>
+            </div>
           <ul class="twp-main_menu">
             {% for link in section.settings.mobile_menu.links %}
               <li class="twp-nav_item">
@@ -301,12 +305,6 @@
   const mobileMenu = document.querySelector('.twp-mobile_menu');
   const menuOpen = document.querySelector('.menu-open');
   const menuClose = document.querySelector('.menu-close');
-  menuOpen.addEventListener('click', ()=> {
-    mobileMenu.classList.add('twp-mm-active');
-  });
-  menuClose.addEventListener('click', ()=> {
-    mobileMenu.classList.remove('twp-mm-active');
-  });
 
   function disableBodyScroll() {
     document.body.classList.add('no-scroll');
@@ -317,9 +315,15 @@
   }
 
   const targetElement = document.querySelector('.twp-header');
-  
-  targetElement.addEventListener('mouseenter', disableBodyScroll);
-  targetElement.addEventListener('mouseleave', enableBodyScroll);
+
+  menuOpen.addEventListener('click', ()=> {
+    mobileMenu.classList.add('twp-mm-active');
+    disableBodyScroll(targetElement);
+  });
+  menuClose.addEventListener('click', ()=> {
+    mobileMenu.classList.remove('twp-mm-active');
+    enableBodyScroll(targetElement);
+  });
 
   const mobileNavItems = document.querySelectorAll('.twp-mobile_menu_dropdown .twp-nav_item');
   mobileNavItems.forEach((navItem) => {
