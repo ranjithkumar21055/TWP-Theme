@@ -52,9 +52,26 @@
     fill: {{ section.settings.svg-fill }};
   }
 
-  .twp-mobile_icon .svg-wrapper {
-    width: 30px;  
-    height: 30px;
+  .twp-mobile_icon:not(:last-child) .svg-wrapper::after{
+    content: "";
+    position: absolute;
+    right: 0;
+    width: 1px;
+    height: 100%;
+    opacity: 0.5;
+    background-color: {{ section.blocks[1].settings['mega-menu_text_color'] }};
+  }
+
+  .twp-mobile_icon_wrapper{
+    background-color: {{ section.settings.svg-fill }};
+  }
+
+  .twp-mobile_icon_wrapper svg path{
+    fill: {{ section.blocks[1].settings['mega-menu_text_color'] }};
+  }
+
+  .recently-title h2{
+    color: {{ section.settings.svg-fill }};
   }
 {% endstyle %}
 <div class="twp-header">
@@ -189,52 +206,70 @@
         </div>
         <div class="twp-mobile_menu_dropdown">
           <div class="twp-mobile_icon_wrapper">
-            <div class="twp-mobile_icon">
-              <span class="svg-wrapper">{{ 'icon-account.svg' | inline_asset_content }}</span>
-              <span class="svg-wrapper">{{ 'icon-eye.svg' | inline_asset_content }}</span>
-              <span class="svg-wrapper">{{ 'icon-nut-free.svg' | inline_asset_content }}</span>
+            <div class="twp-mobile_icon twp-mm-home" data-mobile-menu-name="home">
+              <span class="svg-wrapper">{{ 'icon-twp-home.svg' | inline_asset_content }}</span>
             </div>
-          <ul class="twp-main_menu">
-            {% for link in section.settings.mobile_menu.links %}
-              <li class="twp-nav_item">
-                <div class="nav-item_wrapper">
-                  <a href="{{ link.url }}">{{ link.title }}</a>
+            <div class="twp-mobile_icon" data-mobile-menu-name="view">
+              <span class="svg-wrapper">{{ 'icon-twp-view.svg' | inline_asset_content }}</span>
+            </div>
+            <div class="twp-mobile_icon" data-mobile-menu-name="account">
+              <span class="svg-wrapper">{{ 'icon-twp-person.svg' | inline_asset_content }}</span>
+            </div>
+            <div class="twp-mobile_icon" data-mobile-menu-name="cart">
+              <span class="svg-wrapper">{{ 'icon-twp-cart.svg' | inline_asset_content }}</span>
+            </div>
+          </div>
+          <div class="twp-mobile_icon_content">
+            <ul class="twp-main_menu twp-mm-home active" data-mobile-menu-name="home">
+              {% for link in section.settings.mobile_menu.links %}
+                <li class="twp-nav_item">
+                  <div class="nav-item_wrapper">
+                    <a href="{{ link.url }}">{{ link.title }}</a>
+                    {% if link.links.size > 0 %}
+                      <span class="nav-item-dropdown-open">{{ 'icon-plus.svg' | inline_asset_content }}</span>
+                      <span class="nav-item-dropdown-close">{{ 'icon-minus.svg' | inline_asset_content }}</span>
+                    {% endif %}
+                  </div>
                   {% if link.links.size > 0 %}
-                    <span class="nav-item-dropdown-open">{{ 'icon-plus.svg' | inline_asset_content }}</span>
-                    <span class="nav-item-dropdown-close">{{ 'icon-minus.svg' | inline_asset_content }}</span>
-                  {% endif %}
-                </div>
-                {% if link.links.size > 0 %}
-                  <ul class="twp-mega_menu_list">
-                    {% for child_link in link.links %}
-                      <li class="twp-child_menu_item" data-mega-menu-name="{{ child_link.title }}">
-                        <div class="nav-item_child_wrapper">
-                          <a href="{{ child_link.url }}">{{ child_link.title }}</a>
+                    <ul class="twp-mega_menu_list">
+                      {% for child_link in link.links %}
+                        <li class="twp-child_menu_item" data-mega-menu-name="{{ child_link.title }}">
+                          <div class="nav-item_child_wrapper">
+                            <a href="{{ child_link.url }}">{{ child_link.title }}</a>
+                            {% if child_link.links.size > 0 %}
+                              <span class="nav-item-child-dropdown-open">
+                                {{- 'icon-plus.svg' | inline_asset_content -}}
+                              </span>
+                              <span class="nav-item-child-dropdown-close">
+                                {{- 'icon-minus.svg' | inline_asset_content -}}
+                              </span>
+                            {% endif %}
+                          </div>
                           {% if child_link.links.size > 0 %}
-                            <span class="nav-item-child-dropdown-open">
-                              {{- 'icon-plus.svg' | inline_asset_content -}}
-                            </span>
-                            <span class="nav-item-child-dropdown-close">
-                              {{- 'icon-minus.svg' | inline_asset_content -}}
-                            </span>
+                            <ul class="twp-child_menu_list">
+                              {% for sub_child_link in child_link.links %}
+                                <li class="twp-child_menu_item" data-mega-menu-name="{{ sub_child_link.title }}">
+                                  <a href="{{ sub_child_link.url }}">{{ sub_child_link.title }}</a>
+                                </li>
+                              {% endfor %}
+                            </ul>
                           {% endif %}
-                        </div>
-                        {% if child_link.links.size > 0 %}
-                          <ul class="twp-child_menu_list">
-                            {% for sub_child_link in child_link.links %}
-                              <li class="twp-child_menu_item" data-mega-menu-name="{{ sub_child_link.title }}">
-                                <a href="{{ sub_child_link.url }}">{{ sub_child_link.title }}</a>
-                              </li>
-                            {% endfor %}
-                          </ul>
-                        {% endif %}
-                      </li>
-                    {% endfor %}
-                  </ul>
-                {% endif %}
-              </li>
-            {% endfor %}
-          </ul>
+                        </li>
+                      {% endfor %}
+                    </ul>
+                  {% endif %}
+                </li>
+              {% endfor %}
+            </ul>
+            <div class="twp-main_menu twp-mm-view" data-mobile-menu-name="view">
+              <div class="recently-title">
+                <h2><b>Recently Viewed</b></h2>
+              </div>
+              <div class="twp-recently_viewed"></div>
+            </div>
+            <div class="twp-main_menu twp-mm-account" data-mobile-menu-name="account"></div>
+            <div class="twp-main_menu twp-mm-cart" data-mobile-menu-name="cart"></div>
+          </div>
         </div>
       </div>
     </div>
@@ -336,6 +371,24 @@
     enableBodyScroll(targetElement);
   });
 
+
+  const mobileMenuIcons = document.querySelectorAll('.twp-mobile_icon');
+  mobileMenuIcons.forEach((icon) => {
+    icon.addEventListener('click', () => {
+      const mobileIconName = icon.dataset.mobileMenuName;
+      const mobileIconContent = document.querySelector(`.twp-main_menu[data-mobile-menu-name="${mobileIconName}"]`);
+      const mobileIconContentAll = document.querySelectorAll('.twp-main_menu');
+      mobileIconContent.classList.add('active');
+      mobileIconContentAll.forEach((content) => {
+        if(content !== mobileIconContent){
+          content.classList.remove('active');
+        }
+      });
+    });
+  });
+  
+
+
   const mobileNavItems = document.querySelectorAll('.twp-mobile_menu_dropdown .twp-nav_item');
   mobileNavItems.forEach((navItem) => {
    const subMenuOpen = navItem.querySelector('.nav-item-dropdown-open');
@@ -383,6 +436,119 @@ mobileChildItems.forEach((childItem) => {
 });
 
 });
+
+{% comment %} if (typeof(Storage) !== "undefined") {
+  let viewedProducts = JSON.parse(localStorage.getItem("viewedProducts")) || [];
+  let productId = {{ product.id | json }};
+  
+  // Add the product ID to the list if it's not already there
+  if (!viewedProducts.includes(productId)) {
+    viewedProducts.push(productId);
+    
+    // Limit to the last 5 viewed products
+    if (viewedProducts.length > 5) {
+      viewedProducts.shift();
+    }
+    
+    localStorage.setItem("viewedProducts", JSON.stringify(viewedProducts));
+    console.log(viewedProducts);
+  }
+} {% endcomment %}
+
+      function setRecentlyViewedPdp() {
+          const pdpData = {
+              productTitle : "{{ product.title }}",
+              productImg : "{{ product.featured_image | img_url: '' }}",
+              productPrice : "{{ product.price | money | remove_first: '' }}",
+              productUrl : "{{ product.url }}"
+          };
+
+          const productArr = [];
+          let jsonResp,
+              jsonRespArr, 
+              jsonRespArrStr; 
+          const numberOfProduct = 4;
+          productArr.push(pdpData);
+          const currPdpTitle = pdpData.productTitle;
+          const pdpDataString = JSON.stringify(productArr);
+          const localData = localStorage.getItem('recently_viewed');
+        
+
+          if (localData == null) {
+              localStorage.setItem('recently_viewed', pdpDataString);
+              
+          }
+          else if ( localData != null ) {
+              
+              const oldPdpData = localStorage.getItem('recently_viewed');
+              const countPdpData = (oldPdpData.match(/productTitle/g) || []).length;
+    
+              const reVisitPdp =  oldPdpData.includes(currPdpTitle);
+              if (countPdpData < numberOfProduct && reVisitPdp == false) {
+                  jsonResp = JSON.parse(oldPdpData);
+                  jsonRespArr = jsonResp.concat(productArr);
+                  jsonRespArrStr = JSON.stringify(jsonRespArr);
+                  localStorage.setItem('recently_viewed', jsonRespArrStr);
+              }
+
+              else if (countPdpData >= numberOfProduct && reVisitPdp == false) {
+                  jsonResp = JSON.parse(oldPdpData);
+                  jsonResp.shift();
+                  jsonRespArr = jsonResp.concat(productArr);
+                  jsonRespArr =  JSON.stringify(jsonRespArr);
+                  localStorage.setItem('recently_viewed', jsonRespArr);
+              }
+          }
+      }
+      
+      setRecentlyViewedPdp();
+      const localViewed = localStorage.recently_viewed;
+
+
+
+      function getRecentPdp (){
+    
+        // First let's convert localStorage data into object again
+        const pdpData = JSON.parse(localStorage.getItem('recently_viewed'));
+        console.log(pdpData)
+        // Create a empty Array
+        const recentViewHtml = []
+        // Loop through all the data and inject into HTML using ES6
+        pdpData.forEach(function(item){ 
+            recentViewHtml.push(`
+                <section id="Recent">
+                <div class="twp-recent-product_wrapper">
+                    <div class="twp-recent_product">
+                    <a href="${item.productUrl}"><img src='${item.productImg}'/></a>
+                    </div>
+                    <div class="twp-recent_product_info">
+                      <h3 class="c-product__title">
+                          <a class="c-product__url" href="${item.productUrl}">
+                          ${item.productTitle}
+                          </a>
+                      </h3>
+                      <p class="c-productPrice">${item.productPrice}</p>
+                    </div>
+                </div>
+                
+                
+                </section>
+            `)
+        })
+        // Now consolidate the data 
+        const recentBlock = `${recentViewHtml.join('')}`
+        // console.log() to check data is correct 
+        // Inject into PDP page
+        const contentBlock = document.querySelectorAll('.twp-recently_viewed');
+        // Push the data
+        contentBlock.forEach(element =>{
+            element.innerHTML = recentBlock;
+        })
+       
+    }
+    // Execute this function on DOM content load 
+
+    getRecentPdp();
 </script>
 
 {% schema %}
