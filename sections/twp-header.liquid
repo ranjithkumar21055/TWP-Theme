@@ -1,4 +1,4 @@
-{% style %}
+<style>
   {% for block in section.blocks %}
     {% if block.type == 'announcement_bar' %}
       .twp-announcement_bar {
@@ -73,7 +73,21 @@
   .recently-title h2{
     color: {{ section.settings.svg-fill }};
   }
-{% endstyle %}
+
+  #shop-button p{
+    color: {{ section.settings.svg-fill }};
+    text-align: center;
+    font-size: 16px;
+  }
+
+  #shop-button button{
+    background-color: {{ section.settings.svg-fill }};
+    color: {{ section.blocks[1].settings['mega-menu_text_color'] }};
+    text-align: center;
+    font-size: 16px;
+    padding: 15px 30px;
+  }
+</style>
 <div class="twp-header">
   {% for block in section.blocks %}
     {% if block.type == 'announcement_bar' %}
@@ -437,24 +451,8 @@ mobileChildItems.forEach((childItem) => {
 
 });
 
-{% comment %} if (typeof(Storage) !== "undefined") {
-  let viewedProducts = JSON.parse(localStorage.getItem("viewedProducts")) || [];
-  let productId = {{ product.id | json }};
-  
-  // Add the product ID to the list if it's not already there
-  if (!viewedProducts.includes(productId)) {
-    viewedProducts.push(productId);
-    
-    // Limit to the last 5 viewed products
-    if (viewedProducts.length > 5) {
-      viewedProducts.shift();
-    }
-    
-    localStorage.setItem("viewedProducts", JSON.stringify(viewedProducts));
-    console.log(viewedProducts);
-  }
-} {% endcomment %}
 
+// Recently Viewed
       function setRecentlyViewedPdp() {
           const pdpData = {
               productTitle : "{{ product.title }}",
@@ -508,45 +506,48 @@ mobileChildItems.forEach((childItem) => {
 
       function getRecentPdp (){
     
-        // First let's convert localStorage data into object again
         const pdpData = JSON.parse(localStorage.getItem('recently_viewed'));
-        console.log(pdpData)
-        // Create a empty Array
         const recentViewHtml = []
-        // Loop through all the data and inject into HTML using ES6
-        pdpData.forEach(function(item){ 
+        if (pdpData.length > 1){
+          pdpData.forEach(function(item){
+            if (item.productUrl) { 
+              recentViewHtml.push(`
+                  <section id="recent_products">
+                  <div class="twp-recent-product_wrapper">
+                      <div class="twp-recent_product">
+                      <a href="${item.productUrl}"><img src='${item.productImg}'/></a>
+                      </div>
+                      <div class="twp-recent_product_info">
+                        <h3 class="c-product__title">
+                            <a class="c-product__url" href="${item.productUrl}">
+                            ${item.productTitle}
+                            </a>
+                        </h3>
+                        <p class="c-productPrice">${item.productPrice}</p>
+                      </div>
+                  </div>
+                  </section>
+                  `)
+                }
+          });
+        };
+        if (pdpData.length <= 1) {
             recentViewHtml.push(`
-                <section id="Recent">
-                <div class="twp-recent-product_wrapper">
-                    <div class="twp-recent_product">
-                    <a href="${item.productUrl}"><img src='${item.productImg}'/></a>
-                    </div>
-                    <div class="twp-recent_product_info">
-                      <h3 class="c-product__title">
-                          <a class="c-product__url" href="${item.productUrl}">
-                          ${item.productTitle}
-                          </a>
-                      </h3>
-                      <p class="c-productPrice">${item.productPrice}</p>
-                    </div>
-                </div>
-                
-                
+                <section id="shop-button">
+                 <p>You have not viewed any products recently. </p>
+                 <button onclick="window.location.href = '/collections/all';">Continue Shopping</button>
                 </section>
-            `)
-        })
-        // Now consolidate the data 
+            `);
+        }
+
         const recentBlock = `${recentViewHtml.join('')}`
-        // console.log() to check data is correct 
-        // Inject into PDP page
+
         const contentBlock = document.querySelectorAll('.twp-recently_viewed');
-        // Push the data
         contentBlock.forEach(element =>{
             element.innerHTML = recentBlock;
         })
        
     }
-    // Execute this function on DOM content load 
 
     getRecentPdp();
 </script>

@@ -136,6 +136,10 @@
     position: relative;
 }
 
+.twp-mobile_icon_content{
+    height: 100%;
+}
+
 .twp-mobile_icon_content .twp-main_menu{
     display: none;
 }
@@ -247,10 +251,27 @@
 }
 
 /* Recently Viewed */
+.twp-mm-view.active{
+    padding: 20px !important;
+    gap: 20px;
+    height: 100%;
+}
+
 .twp-recently_viewed{
     display: flex;
     flex-direction: column;
     max-width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+#shop-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    flex-direction: column;
 }
 
 .twp-recent-product_wrapper{
