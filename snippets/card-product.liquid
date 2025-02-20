@@ -107,7 +107,6 @@
           </div>
         {%- endif -%}
         <div class="card__content">
-          <p style= "font-size 20px; color: black;">Hello</p>
           <div class="card__information">
             <h3
               class="card__heading"
@@ -125,6 +124,7 @@
               </a>
             </h3>
           </div>
+          <span class="appstle_stand_alone_price_display_selector" data-product-data="{{ product | json | escape }}" style="display:none;"></span>
           <div class="card__badge {{ settings.badge_position }}">
             {%- if card_product.available == false -%}
               <span
